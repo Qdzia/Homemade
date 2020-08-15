@@ -76,6 +76,7 @@
     <Build Include="dbo\Tables\FamilyMembers.sql" />
     <Build Include="dbo\Tables\Favorites.sql" />
     <Build Include="dbo\Procedures\spRecepies_GetById.sql" />
+    <Build Include="dbo\Procedures\spContain_GetRecepieIngById.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LocalDemoDB.publish.xml" />

@@ -17,9 +17,10 @@ namespace HomemadeApp.Models
         public string Photo { get; set; }
         public int UserId { get; set; }
         public DateTime CreatedAt { get; set; }
+        public byte Rating { get; set; }
 
         public RecepieModel(int recepieId, string recepieName, string instruction, TimeSpan prepTime, 
-            TimeSpan totalTime, string video, string photo, int userId, DateTime createdAt)
+            TimeSpan totalTime, string video, string photo, int userId, DateTime createdAt, byte rating)
         {
             RecepieId = recepieId;
             RecepieName = recepieName;
@@ -30,6 +31,7 @@ namespace HomemadeApp.Models
             Photo = photo;
             UserId = userId;
             CreatedAt = createdAt;
+            Rating = rating;
         }
 
     }

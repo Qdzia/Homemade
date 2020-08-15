@@ -19,7 +19,7 @@
             </Grid.RowDefinitions>
 
             <MediaElement Grid.Row="0" Margin="20" Source="D:\Documents\RecepieDB\AppTest\ChickenChowMein.mp4"/>
-            <ListBox Grid.Row="1" Margin="10" />
+            <ListBox Grid.Row="1" Margin="10" ItemsSource="{Binding Ingredients}" />
         </Grid>
 
         <Grid Grid.Column="1">
@@ -33,13 +33,13 @@
             </Grid.RowDefinitions>
 
             <Viewbox Grid.Row="0"  Margin="4" VerticalAlignment="Stretch" Height="Auto">
-                <TextBlock Text="Recepie Name" />
+                <TextBlock Text="{Binding RecepieName}" />
             </Viewbox>
             <Viewbox Grid.Row="4"  Margin="4" VerticalAlignment="Stretch" Height="Auto">
                 <TextBlock Text="Notes" />
             </Viewbox>
             <Viewbox Grid.Row="3"  Margin="4" VerticalAlignment="Stretch" Height="Auto">
-                <TextBlock Text="Instruction" />
+                <TextBlock Text="{Binding Instruction}" />
             </Viewbox>
 
         </Grid>
