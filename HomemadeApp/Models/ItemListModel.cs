@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace HomemadeApp.Models
 {
-    class ContainModel
+    class ItemListModel
     {
-        public int RecepieId { get; set; }
-        public int IngId { get; set; }
+        public string IngName { get; set; }
         public decimal Count { get; set; }
         public string Unit { get; set; }
         public string Notes { get; set; }
 
-        public ContainModel(int recepieId, int ingId, decimal count, string unit, string notes)
+        public ItemListModel(string ingName, decimal count, string unit, string notes)
         {
-            RecepieId = recepieId;
-            IngId = ingId;
+            IngName = ingName;
             Count = count;
             Unit = unit;
             Notes = notes;
@@ -25,7 +23,7 @@ namespace HomemadeApp.Models
 
         public override string ToString()
         {
-            return $"{Count} {Unit} {Notes}";
+            return $"{Count} {Unit} {IngName}, {Notes}";
         }
 
     }

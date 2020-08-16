@@ -2,6 +2,8 @@
 	@RecepieId int
 AS
 BEGIN
-	SELECT * FROM Contain
+	SELECT i.IngName, c.Count, c.Unit, c.Notes 
+	FROM Contain c
+	JOIN Ingredients i ON c.IngId = i.IngId
 	WHERE RecepieId = @RecepieId;
 END

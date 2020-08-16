@@ -21,11 +21,11 @@ namespace HomemadeApp
             }
         }
 
-        public List<ContainModel> GetRecepieIngById(int recepieId)
+        public List<ItemListModel> GetRecepieIngById(int recepieId)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
             {
-                var output = connection.Query<ContainModel>($"spContain_GetRecepieIngById @RecepieId", new { RecepieId = recepieId }).ToList();
+                var output = connection.Query<ItemListModel>($"spContain_GetRecepieIngById @RecepieId", new { RecepieId = recepieId }).ToList();
                 return output;
             }
         }
