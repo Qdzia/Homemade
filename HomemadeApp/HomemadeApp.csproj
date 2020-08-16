@@ -72,8 +72,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="DataAccess.cs" />
-    <Compile Include="Helper.cs" />
+    <Compile Include="DataAccess\DataAccess.cs" />
+    <Compile Include="DataAccess\Helper.cs" />
     <Compile Include="Models\ItemListModel.cs" />
     <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\RecepieModel.cs" />
