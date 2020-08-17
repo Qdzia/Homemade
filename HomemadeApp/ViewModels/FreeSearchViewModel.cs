@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using HomemadeApp.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace HomemadeApp.ViewModels
 {
     class FreeSearchViewModel : Screen
     {
+        public FreeSearchViewModel()
+        {
+            
+        }
 
+        public string TestText { get { return "FreeSearchTest"; } }
     }
 }
