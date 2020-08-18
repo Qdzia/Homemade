@@ -15,6 +15,6 @@ namespace HomemadeApp.ViewModels
             
         }
 
-        public string TestText { get { return "FreeSearchTest"; } }
+        public string TestText { get { return "Here Are Your Tags"; } }
     }
 }

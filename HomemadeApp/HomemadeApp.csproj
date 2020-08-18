@@ -80,6 +80,7 @@
     <Compile Include="Models\ItemListModel.cs" />
     <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\RecepieModel.cs" />
+    <Compile Include="Models\TagBoxModel.cs" />
     <Compile Include="RecepieSample.cs" />
     <Compile Include="UnitTesting.cs" />
     <Compile Include="App.xaml.cs">
