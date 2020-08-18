@@ -23,15 +23,14 @@
 
             <TextBlock Grid.Column="1" Background="SeaShell" Margin="10"/>
             <Button Grid.Column="0" Margin="10"/>
-            <Button Grid.Column="2" Margin="10"/>
+            <Button x:Name="ChangeRecToIng" Grid.Column="2" Margin="10"/>
 
         </Grid>
 
-        <ctr:TagBox Grid.Row="1" Word="{Binding TestText}"/>
-        <!--<TextBlock Grid.Row="1" FontSize="40" Foreground="White" Text="{Binding TestText}"/>-->
+        <ctr:TagBox Grid.Row="1" Header="{Binding TestText,Mode=TwoWay}" Tags="{Binding TagList,Mode=TwoWay}" ActiveTags="{Binding ActiveTags,Mode=TwoWay}"/>
 
-        <ListView Margin="10" Name="lvDataBinding" Grid.Row="2">
-            <ListView.ItemTemplate>
+        <ListView Margin="10" Name="lvDataBinding" Grid.Row="2" ItemsSource="{Binding ActiveTags,Mode=TwoWay}">
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
                         <TextBlock Text="Image" />
@@ -44,7 +43,7 @@
                         <TextBlock Text=")" />
                     </WrapPanel>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
         </ListView>
     </Grid>
 </UserControl>

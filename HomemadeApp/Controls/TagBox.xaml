@@ -12,12 +12,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        
-        <TextBlock Grid.Row="0" FontSize="15" Foreground="DarkBlue" x:Name="WordBox" Text="{Binding Word, ElementName=Root}"/>
+
+        <TextBlock Grid.Row="0" FontSize="15" Foreground="DarkBlue" Text="{Binding Header, ElementName=Root}"/>
 
         <Grid Grid.Row="1">
 
-            <ItemsControl Name="TagList">
+            <ItemsControl Name="TagList" ItemsSource="{Binding Tags, ElementName=Root}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel/>

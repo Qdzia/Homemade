@@ -10,14 +10,6 @@ namespace HomemadeApp.Models
     public class TagBoxModel
     {
         public string Tag { get; set; }
-
-        //private Color _tagColor;
-        //public Color TagColor 
-        //{
-        //    get { if (IsActive) return _tagColor; else return Colors.Gray; }
-        //    set { _tagColor = value; } 
-        //}
-
         public SolidColorBrush TagColor { get; set; }
         public bool IsActive { get; set; }
 
@@ -29,5 +21,12 @@ namespace HomemadeApp.Models
             IsActive = isActive;
         }
 
+        public TagBoxModel(TagModel tag)
+        {
+            Tag = tag.Tag;
+            TagColor = new SolidColorBrush(
+                (Color)ColorConverter.ConvertFromString(tag.TagColor));
+            IsActive = false;
+        }
     }
 }

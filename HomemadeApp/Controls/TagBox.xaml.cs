@@ -2,6 +2,7 @@
 using HomemadeApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,31 +23,43 @@ namespace HomemadeApp.Controls
     /// </summary>
     public partial class TagBox : UserControl
     {
-        public BindableCollection<TagBoxModel> Tags { get; set; }
-        public List<string> ActiveTags { get; set; }
+
+        #region Dependacy
+        public string Header
+        {
+            get { return (string)GetValue(HeaderProperty); }
+            set { SetValue(HeaderProperty, value); }
+        }
+
+        public static readonly DependencyProperty HeaderProperty =
+            DependencyProperty.Register("Header", typeof(string), typeof(TagBox), new PropertyMetadata("None"));
+
+        public BindableCollection<TagBoxModel> Tags
+        {
+            get { return (BindableCollection<TagBoxModel>)GetValue(TagsProperty); }
+            set { SetValue(TagsProperty, value);  }
+        }
+
+        public static readonly DependencyProperty TagsProperty =
+            DependencyProperty.Register("Tags", typeof(BindableCollection<TagBoxModel>), typeof(TagBox), new PropertyMetadata(null));
+
+        public BindableCollection<string> ActiveTags
+        {
+            get { return (BindableCollection<string>)GetValue(ActiveTagsProperty); }
+            set { SetValue(ActiveTagsProperty, value); }
+        }
+
+        public static readonly DependencyProperty ActiveTagsProperty =
+            DependencyProperty.Register("ActiveTags", typeof(BindableCollection<string>), typeof(TagBox), new PropertyMetadata(null));
+
+        #endregion
+
         public TagBox()
         {
             InitializeComponent();
-            ActiveTags = new List<string>();
-            Tags = new BindableCollection<TagBoxModel>()
-            {
-                new TagBoxModel("Jedzenie",new SolidColorBrush(Colors.Blue),false),
-                new TagBoxModel("chinese",new SolidColorBrush(Colors.Blue),false),
-                new TagBoxModel("Italian",new SolidColorBrush(Colors.Blue),false)
-            };
-            TagList.ItemsSource = Tags;
         }
 
-
-        public string Word
-        {
-            get { return (string)GetValue(WordProperty); }
-            set { SetValue(WordProperty, value); }
-        }
-
-        public static readonly DependencyProperty WordProperty =
-            DependencyProperty.Register("Word", typeof(string), typeof(TagBox), new PropertyMetadata("Brak"));
-
+        //Changing the color of Tag and add/remove it from Active Tags List
         private void ActiveTag(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;

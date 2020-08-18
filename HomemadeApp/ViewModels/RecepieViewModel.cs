@@ -17,7 +17,7 @@ namespace HomemadeApp.ViewModels
         public RecepieViewModel()
         {
             Ingredients = new BindableCollection<ItemListModel>();
-            DataAccess da = new DataAccess();
+            DataAccess da = DataAccess.Instance;
             Recepie = da.GetRecepieById(5)[0];
 
             Ingredients.AddRange(da.GetRecepieIngById(5));

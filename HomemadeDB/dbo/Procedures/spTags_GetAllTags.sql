@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE [dbo].[spTags_GetAllTags]
+AS
+	SELECT * FROM Tags;
+RETURN 0
