@@ -65,5 +65,14 @@ namespace HomemadeApp
                 return output;
             }
         }
+
+        public List<IngredientModel> GetAllIng()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                var output = connection.Query<IngredientModel>($"spIngredients_GetAll").ToList();
+                return output;
+            }
+        }
     }
 }

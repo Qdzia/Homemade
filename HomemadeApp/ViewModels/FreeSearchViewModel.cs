@@ -6,14 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace HomemadeApp.ViewModels
 {
-    class FreeSearchViewModel : Screen
+    class FreeSearchViewModel : Conductor<object>
     {
         public BindableCollection<TagBoxModel> TagList { get; set; }
         public BindableCollection<string> ActiveTags { get; set; }
+        public BindableCollection<IngredientModel> IngredientsList { get; set; }
+
+        public SearchGridIng SGIng { get; set; }
+        //public UserControl SearchGrid { get; set; }
 
         public FreeSearchViewModel()
         {
@@ -22,6 +27,11 @@ namespace HomemadeApp.ViewModels
             ActiveTags = new BindableCollection<string>();
             ActiveTags.Add("TestTag");
             TestText = "Here TagsSSS";
+
+        //https://caliburnmicro.com/documentation/composition
+            //IngredientsList = new BindableCollection<IngredientModel>();
+            //IngredientsList.AddRange(DataAccess.Instance.GetAllIng());
+            //SearchGrid = new SearchGridIng();
         }
 
         public bool CanChangeRecToIng()
@@ -30,8 +40,7 @@ namespace HomemadeApp.ViewModels
         }
         public void ChangeRecToIng()
         {
-            TagList.Add(new TagBoxModel("Meat", new SolidColorBrush(Colors.Red), false));
-        
+            ActivateItem(new PlannerViewModel());
         }
 
         public string TestText { get; set; }

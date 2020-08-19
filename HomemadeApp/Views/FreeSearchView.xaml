@@ -27,10 +27,21 @@
 
         </Grid>
 
-        <ctr:TagBox Grid.Row="1" Header="{Binding TestText,Mode=TwoWay}" Tags="{Binding TagList,Mode=TwoWay}" ActiveTags="{Binding ActiveTags,Mode=TwoWay}"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ctr:TagBox Grid.Row="1" Header="{Binding TestText,Mode=TwoWay}" Tags="{Binding TagList,Mode=TwoWay}" ActiveTags="{Binding ActiveTags,Mode=TwoWay}"/>
 
-        <ListView Margin="10" Name="lvDataBinding" Grid.Row="2" ItemsSource="{Binding ActiveTags,Mode=TwoWay}">
-            <!--<ListView.ItemTemplate>
+            <ComboBox Grid.Column="1" Margin="10"/>
+        </Grid>
+
+        <ContentControl x:Name="ActivateItem" Grid.Row="2"/>
+        <!--<ctr:SearchGridIng  x:Name="SGIng" Grid.Row="2" />-->
+        <!--<ContentControl Grid.Row="2" Content="{Binding SearchGrid,Mode=TwoWay}"/>-->
+        <!--<ListView Margin="10" Name="lvDataBinding" Grid.Row="2" ItemsSource="{Binding ActiveTags,Mode=TwoWay}">
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
                         <TextBlock Text="Image" />
@@ -43,7 +54,7 @@
                         <TextBlock Text=")" />
                     </WrapPanel>
                 </DataTemplate>
-            </ListView.ItemTemplate>-->
-        </ListView>
+            </ListView.ItemTemplate>
+        </ListView>-->
     </Grid>
 </UserControl>
