@@ -79,6 +79,7 @@
     <Build Include="dbo\Procedures\spContain_GetRecepieIngById.sql" />
     <Build Include="dbo\Procedures\spTags_GetAllTags.sql" />
     <Build Include="dbo\Procedures\spIngredients_GetAll.sql" />
+    <Build Include="dbo\Procedures\spRecepies_GetAllRec.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LocalDemoDB.publish.xml" />

@@ -12,7 +12,16 @@ namespace HomemadeApp.ViewModels
     {
         public BindableCollection<TagBoxModel> TagList { get; set; }
         public BindableCollection<string> ActiveTags { get; set; }
-        public BindableCollection<IngredientModel> IngredientsList { get; set; }
+        public BindableCollection<RecepieModel> RecepieList { get; set; }
+
+        private string _searchBarText;
+
+        public string SearchBarText
+        {
+            get { return _searchBarText; }
+            set { _searchBarText = value; }
+        }
+
 
         public FreeSearchRecViewModel()
         {
@@ -21,6 +30,8 @@ namespace HomemadeApp.ViewModels
             ActiveTags = new BindableCollection<string>();
             ActiveTags.Add("TestTag");
             TestText = "Here TagsSSS";
+
+            RecepieList = new BindableCollection<RecepieModel>(DataAccess.Instance.GetAllRec());
         }
 
         public bool CanChangeRecToIng()

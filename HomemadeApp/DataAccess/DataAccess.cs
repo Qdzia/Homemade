@@ -74,5 +74,15 @@ namespace HomemadeApp
                 return output;
             }
         }
+
+        public List<RecepieModel> GetAllRec()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                var output = connection.Query<RecepieModel>($"spRecepies_GetAllRec").ToList();
+                return output;
+            }
+        }
+
     }
 }
