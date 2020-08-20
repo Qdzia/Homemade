@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HomemadeApp.Controls
+namespace HomemadeApp.Views
 {
     /// <summary>
-    /// Interaction logic for SearchGridRec.xaml
+    /// Interaction logic for FreeSearchIngView.xaml
     /// </summary>
-    public partial class SearchGridRec : UserControl
+    public partial class FreeSearchIngView : UserControl
     {
-        public SearchGridRec()
+        public FreeSearchIngView()
         {
             InitializeComponent();
         }

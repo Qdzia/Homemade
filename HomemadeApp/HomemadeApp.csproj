@@ -72,15 +72,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Controls\SearchGrid.xaml.cs">
-      <DependentUpon>SearchGrid.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\SearchGridIng.xaml.cs">
-      <DependentUpon>SearchGridIng.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\SearchGridRec.xaml.cs">
-      <DependentUpon>SearchGridRec.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\TagBox.xaml.cs">
       <DependentUpon>TagBox.xaml</DependentUpon>
     </Compile>
@@ -98,10 +89,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\FreeSearchIngViewModel.cs" />
+    <Compile Include="ViewModels\FreeSearchRecViewModel.cs" />
     <Compile Include="ViewModels\FreeSearchViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModel.cs" />
     <Compile Include="ViewModels\RecepieViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\FreeSearchIngView.xaml.cs">
+      <DependentUpon>FreeSearchIngView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FreeSearchRecView.xaml.cs">
+      <DependentUpon>FreeSearchRecView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FreeSearchView.xaml.cs">
       <DependentUpon>FreeSearchView.xaml</DependentUpon>
     </Compile>
@@ -143,19 +142,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\SearchGrid.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\SearchGridIng.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\SearchGridRec.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controls\TagBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FreeSearchIngView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FreeSearchRecView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,8 +171,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\SearchGrids\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

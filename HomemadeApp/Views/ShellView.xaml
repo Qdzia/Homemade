@@ -15,8 +15,9 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0">
             <Button Content=" R " FontSize="20" x:Name="GotoRecepie"/>
-            <Button Content=" F " FontSize="20" x:Name="GotoFreeSearch"/>
+            <Button Content=" F " FontSize="20" x:Name="GotoFreeSearchRec"/>
             <Button Content=" P " FontSize="20" x:Name="GotoPlanner"/>
+            <Button Content=" I " FontSize="20" x:Name="GotoFreeSearchIng"/>
 
         </StackPanel>
 

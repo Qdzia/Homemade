@@ -19,14 +19,19 @@ namespace HomemadeApp.ViewModels
             ActivateItem(new RecepieViewModel());
         }
 
-        public void GotoFreeSearch()
+        public void GotoFreeSearchRec()
         {
-            ActivateItem(new FreeSearchViewModel());
+            ActivateItem(new FreeSearchRecViewModel());
         }
 
         public void GotoPlanner()
         {
             ActivateItem(new PlannerViewModel());
+        }
+
+        public void GotoFreeSearchIng()
+        {
+            ActivateItem(new FreeSearchIngViewModel());
         }
     }
 }
