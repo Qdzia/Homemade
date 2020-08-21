@@ -84,5 +84,21 @@ namespace HomemadeApp
             }
         }
 
+        public List<RecepieModel> FiltrRecepieByTags(List<string> tags)
+        {
+            string tagList = "";
+
+            foreach (var tag in tags)
+            {
+                tagList += tag.Trim() + "|";
+            }
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                var output = connection.Query<RecepieModel>($"spTaged_SearchRecepieByTags @Tags", new { Tags = tagList }).ToList();
+                return output;
+            }
+
+        }
+
     }
 }

@@ -80,6 +80,7 @@
     <Build Include="dbo\Procedures\spTags_GetAllTags.sql" />
     <Build Include="dbo\Procedures\spIngredients_GetAll.sql" />
     <Build Include="dbo\Procedures\spRecepies_GetAllRec.sql" />
+    <Build Include="dbo\Procedures\spTaged_SearchRecepieIdByTags.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LocalDemoDB.publish.xml" />

@@ -31,7 +31,8 @@ namespace HomemadeApp.ViewModels
             ActiveTags.Add("TestTag");
             TestText = "Here TagsSSS";
 
-            RecepieList = new BindableCollection<RecepieModel>(DataAccess.Instance.GetAllRec());
+            List<string> simpleTagList = new List<string>() { "Chinese", "Italian" };
+            RecepieList = new BindableCollection<RecepieModel>(DataAccess.Instance.FiltrRecepieByTags(simpleTagList));
         }
 
         public bool CanChangeRecToIng()
