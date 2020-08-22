@@ -8,5 +8,12 @@ namespace HomemadeApp.ViewModels
 {
     class PlannerViewModel
     {
+        public FreeSearchRecViewModel FreeSearchRecViewModel { get; set; }
+
+
+        public PlannerViewModel()
+        {
+            this.FreeSearchRecViewModel = new FreeSearchRecViewModel();
+        }
     }
 }

@@ -10,8 +10,8 @@ namespace HomemadeApp.ViewModels
 {
     class FreeSearchRecViewModel : Screen
     {
+
         public BindableCollection<TagBoxModel> TagList { get; set; }
-        public BindableCollection<string> ActiveTags { get; set; }
         public BindableCollection<RecepieModel> RecepieList { get; set; }
 
         private string _searchBarText;
@@ -19,20 +19,41 @@ namespace HomemadeApp.ViewModels
         public string SearchBarText
         {
             get { return _searchBarText; }
-            set { _searchBarText = value; }
+            set 
+            { 
+                _searchBarText = value;
+                NotifyOfPropertyChange(() => SearchBarText);
+                RecepieList.Clear();
+                RecepieList.AddRange(DataAccess.Instance.FiltrRecepieByName(value));
+            }
         }
+        private BindableCollection<string> _activeTags;
+
+        public BindableCollection<string> ActiveTags
+        {
+            get { return _activeTags; }
+            set
+            {
+                _activeTags = value;
+            }
+
+        }
+
+     
 
 
         public FreeSearchRecViewModel()
         {
+            RecepieList = new BindableCollection<RecepieModel>();
             TagList = new BindableCollection<TagBoxModel>();
             TagList.AddRange(DataAccess.Instance.GetAllTags());
             ActiveTags = new BindableCollection<string>();
-            ActiveTags.Add("TestTag");
             TestText = "Here TagsSSS";
 
-            List<string> simpleTagList = new List<string>() { "Chinese", "Italian" };
-            RecepieList = new BindableCollection<RecepieModel>(DataAccess.Instance.FiltrRecepieByTags(simpleTagList));
+           
+            
+
+            //SearchBarText = "T";
         }
 
         public bool CanChangeRecToIng()

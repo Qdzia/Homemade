@@ -52,8 +52,11 @@ namespace HomemadeApp.Controls
         public static readonly DependencyProperty ActiveTagsProperty =
             DependencyProperty.Register("ActiveTags", typeof(BindableCollection<string>), typeof(TagBox), new PropertyMetadata(null));
 
+
+
         #endregion
 
+        public event EventHandler OnTagChange;
         public TagBox()
         {
             InitializeComponent();
@@ -72,6 +75,7 @@ namespace HomemadeApp.Controls
                     if (Tags[i].IsActive) ActiveTags.Remove(Tags[i].Tag);
                     else ActiveTags.Add(Tags[i].Tag);
                     Tags[i] = new TagBoxModel(Tags[i].Tag, Tags[i].TagColor, !Tags[i].IsActive);
+                    
                 } 
             }
         }

@@ -100,5 +100,15 @@ namespace HomemadeApp
 
         }
 
+       
+        public List<RecepieModel> FiltrRecepieByName(string name)
+        {
+            name = "%" + name.Trim() + "%";
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                var output = connection.Query<RecepieModel>($" spRecepies_SearchRecepieByName @Name", new { Name = name }).ToList();
+                return output;
+            }
+        }
     }
 }
