@@ -21,7 +21,7 @@ namespace HomemadeApp.ViewModels
 
         public void GotoFreeSearchRec()
         {
-            ActivateItem(new FreeSearchRecViewModel());
+            ActivateItem(new FreeSearchViewModel());
         }
 
         public void GotoPlanner()

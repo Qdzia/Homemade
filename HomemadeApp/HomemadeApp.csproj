@@ -72,9 +72,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Controls\TagBox.xaml.cs">
-      <DependentUpon>TagBox.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DataAccess\DataAccess.cs" />
     <Compile Include="DataAccess\Helper.cs" />
     <Compile Include="Models\IngredientModel.cs" />
@@ -95,6 +92,7 @@
     <Compile Include="ViewModels\PlannerViewModel.cs" />
     <Compile Include="ViewModels\RecepieViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\TagBarViewModel.cs" />
     <Compile Include="Views\FreeSearchIngView.xaml.cs">
       <DependentUpon>FreeSearchIngView.xaml</DependentUpon>
     </Compile>
@@ -112,6 +110,9 @@
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TagBarView.xaml.cs">
+      <DependentUpon>TagBarView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -142,10 +143,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\TagBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\FreeSearchIngView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -167,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TagBarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

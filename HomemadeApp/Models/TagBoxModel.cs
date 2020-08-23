@@ -28,5 +28,12 @@ namespace HomemadeApp.Models
                 (Color)ColorConverter.ConvertFromString(tag.TagColor));
             IsActive = false;
         }
+
+        public TagBoxModel(TagBoxModel tag)
+        {
+            Tag = tag.Tag;
+            TagColor = tag.TagColor;
+            IsActive = !tag.IsActive;
+        }
     }
 }

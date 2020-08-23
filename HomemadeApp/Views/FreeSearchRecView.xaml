@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HomemadeApp.Views"
-             xmlns:ctr="clr-namespace:HomemadeApp.Controls"
              mc:Ignorable="d" Background="CadetBlue"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -33,8 +32,7 @@
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ctr:TagBox x:Name="TagBar" Grid.Row="1"  Header="{Binding TestText,Mode=TwoWay}" Tags="{Binding TagList,Mode=TwoWay}" ActiveTags="{Binding ActiveTags,Mode=TwoWay}"/>
-
+            
             <ComboBox Grid.Column="1" Margin="10"/>
         </Grid>
 
