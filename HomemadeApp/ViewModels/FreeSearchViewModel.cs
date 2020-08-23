@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using HomemadeApp.Models;
+using HomemadeApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace HomemadeApp.ViewModels
     {
         public TagBarViewModel TagBar { get; set; }
 
+        public RecepieListViewModel SearchList { get; set; }
+
         public string SearchText { get; set; }
         public BindableCollection<TagBoxModel> TagList { get; set; }
         public BindableCollection<string> ActiveTags { get; set; }
@@ -26,6 +29,10 @@ namespace HomemadeApp.ViewModels
             ActiveTags = new BindableCollection<string>();
             WireUpTagBar();
             SearchText = "Hej";
+
+            SearchList = new RecepieListViewModel();
+            SearchList.RecepieList = new BindableCollection<RecepieModel>();
+            SearchList.RecepieList.AddRange(DataAccess.Instance.GetAllRec());
         }
 
         private void WireUpTagBar()
@@ -40,6 +47,8 @@ namespace HomemadeApp.ViewModels
         {
             SearchText = "Tag event działa";
             NotifyOfPropertyChange(() => SearchText);
+
+            SearchList.UpdateList(TagBar.ActiveTags.ToList());
         }
 
         public bool CanChangeRecToIng()

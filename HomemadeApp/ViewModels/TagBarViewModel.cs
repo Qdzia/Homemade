@@ -20,42 +20,53 @@ namespace HomemadeApp.ViewModels
 
         public event EventHandler OnTagChange;
 
-        public void TagClicked(TagBoxModel selectedTag, TextBlock textBox)
+        public TagBarViewModel()
         {
-            if (selectedTag.IsActive)
-                textBox.Background = selectedTag.TagColor;
-            else
-                textBox.Background = new SolidColorBrush(Colors.Blue);
+            ActiveTags = new BindableCollection<string>();
+            Tags = new BindableCollection<TagBoxModel>();
+        }
 
-            OnTagChange?.Invoke(this,null);
+        public void TagClicked(TagBoxModel tag, Border border)
+        {
+            ToggleColour(tag, border);
+
+            UpdateActiveTags(tag);
+        }
+
+        private void UpdateActiveTags(TagBoxModel tag)
+        {
+            if (ActiveTags.Contains(tag.Tag))
+            {
+                ActiveTags.Remove(tag.Tag);
+            }
+            else
+            {
+                ActiveTags.Add(tag.Tag);
+            }
+              
+            OnTagChange?.Invoke(this, null);
+
+        }
+
+        private void ToggleColour(TagBoxModel tag, Border border)
+        {
+            if (tag.IsActive)
+            {
+                border.Background = tag.TagColor;
+            }
+            else
+            {
+                border.Background = new SolidColorBrush(Colors.Blue);
+            }
 
             for (int i = 0; i < Tags.Count; i++)
             {
-                if (Tags[i].Tag == selectedTag.Tag)
+                if (Tags[i].Tag == tag.Tag)
                 {
                     //This Constructor copy tag and toggle IsActive propery
                     Tags[i] = new TagBoxModel(Tags[i]);
                 }
             }
         }
-
-
-        //Changing the color of Tag and add/remove it from Active Tags List
-        //private void ActiveTag(object sender, RoutedEventArgs e)
-        //{
-        //    Button button = sender as Button;
-        //    string tagName = button.Content.ToString();
-
-        //    for (int i = 0; i < Tags.Count; i++)
-        //    {
-        //        if (Tags[i].Tag == tagName)
-        //        {
-        //            if (Tags[i].IsActive) ActiveTags.Remove(Tags[i].Tag);
-        //            else ActiveTags.Add(Tags[i].Tag);
-        //            Tags[i] = new TagBoxModel(Tags[i].Tag, Tags[i].TagColor, !Tags[i].IsActive);
-
-        //        }
-        //    }
-        //}
     }
 }

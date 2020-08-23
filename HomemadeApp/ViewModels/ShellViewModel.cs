@@ -31,7 +31,7 @@ namespace HomemadeApp.ViewModels
 
         public void GotoFreeSearchIng()
         {
-            ActivateItem(new FreeSearchIngViewModel());
+            ActivateItem(new PlannerViewModel());
         }
     }
 }

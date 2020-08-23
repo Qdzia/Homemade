@@ -28,5 +28,7 @@
 
         <ContentControl x:Name="TagBar" Grid.Row="1"/>
 
+        <ContentControl x:Name="SearchList" Grid.Row="2"/>
+        
     </Grid>
 </UserControl>

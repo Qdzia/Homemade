@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace HomemadeApp.Views
 {
     /// <summary>
-    /// Interaction logic for FreeSearchRecView.xaml
+    /// Interaction logic for RecepieListView.xaml
     /// </summary>
-    public partial class FreeSearchRecView : UserControl
+    public partial class RecepieListView : UserControl
     {
-        public FreeSearchRecView()
+        public RecepieListView()
         {
             InitializeComponent();
         }
-
     }
 }
