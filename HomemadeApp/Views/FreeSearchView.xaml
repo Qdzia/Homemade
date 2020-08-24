@@ -20,7 +20,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="SearchText" Grid.Column="1" Background="SeaShell" Margin="10"/>
+            <ContentControl x:Name="SearchBar" Grid.Column="1"/>
+
+
             <Button Grid.Column="0" Margin="10"/>
             <Button x:Name="ChangeRecToIng" Grid.Column="2" Margin="10"/>
 

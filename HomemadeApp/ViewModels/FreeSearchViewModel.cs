@@ -14,6 +14,7 @@ namespace HomemadeApp.ViewModels
     class FreeSearchViewModel : Screen
     {
         public TagBarViewModel TagBar { get; set; }
+        public SearchBarViewModel SearchBar { get; set; }
 
         public RecepieListViewModel SearchList { get; set; }
 
@@ -29,6 +30,9 @@ namespace HomemadeApp.ViewModels
             ActiveTags = new BindableCollection<string>();
             WireUpTagBar();
             SearchText = "Hej";
+
+            SearchBar = new SearchBarViewModel();
+
 
             SearchList = new RecepieListViewModel();
             SearchList.RecepieList = new BindableCollection<RecepieModel>();
