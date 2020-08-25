@@ -5,5 +5,7 @@
 
     <BitmapImage x:Key="SearchBarIcon" UriSource="../Assets/Icons/SearchBarIcon.png"/>
     <BitmapImage x:Key="CloseIcon" UriSource="../Assets/Icons/CloseIcon.png"/>
-
+    <BitmapImage x:Key="SearchRecepieIcon" UriSource="../Assets/Icons/SearchRecepieIcon.png"/>
+    <BitmapImage x:Key="SearchIngIcon" UriSource="../Assets/Icons/SearchIngIcon.png"/>
+    
 </ResourceDictionary>

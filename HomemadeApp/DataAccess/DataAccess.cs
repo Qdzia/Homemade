@@ -86,6 +86,8 @@ namespace HomemadeApp
 
         public List<RecepieModel> FiltrRecepieByTags(List<string> tags)
         {
+            if (tags.Count == 0) return GetAllRec();
+
             string tagList = "";
 
             foreach (var tag in tags)
