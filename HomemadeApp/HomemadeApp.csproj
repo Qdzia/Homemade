@@ -87,6 +87,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\FreeSearchViewModel.cs" />
+    <Compile Include="ViewModels\IngSearchListViewModel.cs" />
     <Compile Include="ViewModels\PlannerViewModel.cs" />
     <Compile Include="ViewModels\RecepieListViewModel.cs" />
     <Compile Include="ViewModels\RecepieViewModel.cs" />
@@ -95,6 +96,9 @@
     <Compile Include="ViewModels\TagBarViewModel.cs" />
     <Compile Include="Views\FreeSearchView.xaml.cs">
       <DependentUpon>FreeSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IngSearchListView.xaml.cs">
+      <DependentUpon>IngSearchListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PlannerView.xaml.cs">
       <DependentUpon>PlannerView.xaml</DependentUpon>
@@ -148,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FreeSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IngSearchListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

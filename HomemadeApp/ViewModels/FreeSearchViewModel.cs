@@ -3,9 +3,11 @@ using HomemadeApp.Models;
 using HomemadeApp.Views;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -16,12 +18,39 @@ namespace HomemadeApp.ViewModels
         public TagBarViewModel TagBar { get; set; }
         public SearchBarViewModel SearchBar { get; set; }
 
-        public RecepieListViewModel SearchList { get; set; }
+        public RecepieListViewModel SearchRecepieList { get; set; }
+        public IngSearchListViewModel SearchIngList { get; set; }
 
         public string SearchText { get; set; }
         public BindableCollection<TagBoxModel> TagList { get; set; }
         public BindableCollection<string> ActiveTags { get; set; }
         public BindableCollection<IngredientModel> IngredientsList { get; set; }
+
+        public Visibility SearchVisibilityRec
+        { 
+            get 
+            {
+                if (SearchBar.LookForRecepie) return Visibility.Visible;
+                else return Visibility.Collapsed;
+            } 
+        }
+        public Visibility SearchVisibilityIng
+        {
+            get
+            {
+                if (SearchBar.LookForRecepie) return Visibility.Collapsed;
+                else return Visibility.Visible; 
+            }
+        }
+        public string LookForText 
+        { 
+            get
+            {
+                if (SearchBar.LookForRecepie) return "Looking for recepies";
+                else return "Looking for ingredients";
+            } 
+        }
+
 
         public FreeSearchViewModel()
         {
@@ -34,9 +63,23 @@ namespace HomemadeApp.ViewModels
             SearchBar = new SearchBarViewModel();
 
 
-            SearchList = new RecepieListViewModel();
-            SearchList.RecepieList = new BindableCollection<RecepieModel>();
-            SearchList.RecepieList.AddRange(DataAccess.Instance.GetAllRec());
+            SearchRecepieList = new RecepieListViewModel();
+            SearchRecepieList.RecepieList = new BindableCollection<RecepieModel>();
+            SearchRecepieList.RecepieList.AddRange(DataAccess.Instance.GetAllRec());
+
+            SearchIngList = new IngSearchListViewModel();
+            SearchIngList.IngList = new BindableCollection<IngredientModel>();
+            SearchIngList.IngList.AddRange(DataAccess.Instance.GetAllIng());
+
+
+            
+
+        }
+        public void ChangeLookingMode()
+        {
+            SearchBar.LookForRecepie = !SearchBar.LookForRecepie;
+            NotifyOfPropertyChange(() => SearchVisibilityIng);
+            NotifyOfPropertyChange(() => SearchVisibilityRec);
         }
 
         private void WireUpTagBar()
@@ -52,7 +95,7 @@ namespace HomemadeApp.ViewModels
             SearchText = "Tag event działa";
             NotifyOfPropertyChange(() => SearchText);
 
-            SearchList.UpdateList(TagBar.ActiveTags.ToList());
+            SearchRecepieList.UpdateList(TagBar.ActiveTags.ToList());
         }
 
         public bool CanChangeRecToIng()

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HomemadeApp.Views"
              mc:Ignorable="d" Background="DarkRed"
+             xmlns:cal="http://www.caliburnproject.org"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -22,15 +23,38 @@
 
             <ContentControl x:Name="SearchBar" Grid.Column="1"/>
 
+            <Grid Grid.Column="2">
 
-            <Button Grid.Column="0" Margin="10"/>
-            <Button x:Name="ChangeRecToIng" Grid.Column="2" Margin="10"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="1" Content="{Binding LookForText}"/>
+                
+                <Image  Grid.Row="0" cal:Message.Attach="[Event MouseDown]=[Action ChangeLookingMode()]" >
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SearchBar.LookForRecepie}" Value="True">
+                                    <Setter Property="Source" Value="{StaticResource SearchRecepieIcon}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding SearchBar.LookForRecepie}" Value="False">
+                                    <Setter Property="Source" Value="{StaticResource SearchIngIcon}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </Grid>
+            
 
         </Grid>
 
         <ContentControl x:Name="TagBar" Grid.Row="1"/>
 
-        <ContentControl x:Name="SearchList" Grid.Row="2"/>
-        
+        <ContentControl x:Name="SearchIngList" Grid.Row="2" Visibility="{Binding SearchVisibilityRec}"/>
+
+        <ContentControl x:Name="SearchRecepieList" Grid.Row="2" Visibility="{Binding SearchVisibilityIng}"/>
     </Grid>
 </UserControl>
