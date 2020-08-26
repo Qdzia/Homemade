@@ -194,5 +194,16 @@
     <Resource Include="Assets\Icons\SearchIngIcon.png" />
     <Resource Include="Assets\Icons\SearchRecepieIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\AddRecepieIcon.png" />
+    <Resource Include="Assets\Icons\HomePageIcon.png" />
+    <Resource Include="Assets\Icons\MenuIcon.png" />
+    <Resource Include="Assets\Icons\PerformanceIcon.png" />
+    <Resource Include="Assets\Icons\PlannerIcon.png" />
+    <Resource Include="Assets\Icons\UserAccountIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\GroceryListIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

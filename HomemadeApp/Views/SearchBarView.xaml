@@ -14,7 +14,9 @@
                 Margin="15" 
                 Padding="5" 
                 CornerRadius="18"
-                Background="White">
+                Background="White"
+                BorderThickness="1"
+                BorderBrush="Black">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10"/>

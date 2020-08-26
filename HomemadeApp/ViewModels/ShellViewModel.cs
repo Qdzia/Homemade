@@ -9,29 +9,15 @@ namespace HomemadeApp.ViewModels
 {
     class ShellViewModel : Conductor<object>
     {
+        List<Screen> Screens { get; set; }
         public ShellViewModel()
         {
             
         }
 
-        public void GotoRecepie() 
-        {
-            ActivateItem(new RecepieViewModel());
-        }
-
-        public void GotoFreeSearchRec()
-        {
-            ActivateItem(new FreeSearchViewModel());
-        }
-
-        public void GotoPlanner()
-        {
-            ActivateItem(new PlannerViewModel());
-        }
-
-        public void GotoFreeSearchIng()
-        {
-            ActivateItem(new PlannerViewModel());
-        }
+        public void GotoRecepie() => ActivateItem(new RecepieViewModel());
+        public void GotoFreeSearch() => ActivateItem(new FreeSearchViewModel());
+        public void GotoPlanner() => ActivateItem(new PlannerViewModel());
+        
     }
 }

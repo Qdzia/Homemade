@@ -7,5 +7,17 @@
     <BitmapImage x:Key="CloseIcon" UriSource="../Assets/Icons/CloseIcon.png"/>
     <BitmapImage x:Key="SearchRecepieIcon" UriSource="../Assets/Icons/SearchRecepieIcon.png"/>
     <BitmapImage x:Key="SearchIngIcon" UriSource="../Assets/Icons/SearchIngIcon.png"/>
-    
+    <BitmapImage x:Key="HomePageIcon" UriSource="../Assets/Icons/HomePageIcon.png"/>
+    <BitmapImage x:Key="MenuIcon" UriSource="../Assets/Icons/MenuIcon.png"/>
+    <BitmapImage x:Key="PerformanceIcon" UriSource="../Assets/Icons/PerformanceIcon.png"/>
+    <BitmapImage x:Key="PlannerIcon" UriSource="../Assets/Icons/PlannerIcon.png"/>
+    <BitmapImage x:Key="UserAccountIcon" UriSource="../Assets/Icons/UserAccountIcon.png"/>
+    <BitmapImage x:Key="GroceryListIcon" UriSource="../Assets/Icons/GroceryListIcon.png"/>
+    <BitmapImage x:Key="AddRecepieIcon" UriSource="../Assets/Icons/AddRecepieIcon.png"/>
+
+    <Style x:Key="MenuButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
 </ResourceDictionary>

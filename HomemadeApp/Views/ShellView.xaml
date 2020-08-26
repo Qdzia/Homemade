@@ -13,12 +13,35 @@
         </Grid.ColumnDefinitions>
 
 
-        <StackPanel Grid.Row="0" Grid.Column="0">
-            <Button Content=" R " FontSize="20" x:Name="GotoRecepie"/>
-            <Button Content=" F " FontSize="20" x:Name="GotoFreeSearchRec"/>
-            <Button Content=" P " FontSize="20" x:Name="GotoPlanner"/>
-            <Button Content=" I " FontSize="20" x:Name="GotoFreeSearchIng"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" MinWidth="40" MaxWidth="45" Margin="5" >
+            <Button x:Name="GotoMenu" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource MenuIcon}"/>
+            </Button>
 
+            <Button x:Name="GotoHomePage" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource HomePageIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoPlanner" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource PlannerIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoGroceryList" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource GroceryListIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoFreeSearch" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource SearchBarIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoUserAccount" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource UserAccountIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoPerformance" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource PerformanceIcon}"/>
+            </Button>
+            
         </StackPanel>
 
         <ContentControl Grid.Row="0" Grid.Column="1" x:Name="ActiveItem"/>
