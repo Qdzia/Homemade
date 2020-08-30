@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HomemadeApp.ViewModels
 {
-    class IngSearchListViewModel : Screen
+    class SearchIngListViewModel : Screen
     {
         public BindableCollection<IngredientModel> IngList { get; set; }
     }

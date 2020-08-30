@@ -18,6 +18,8 @@ namespace HomemadeApp.ViewModels
         public void GotoRecepie() => ActivateItem(new RecepieViewModel());
         public void GotoFreeSearch() => ActivateItem(new FreeSearchViewModel());
         public void GotoPlanner() => ActivateItem(new PlannerViewModel());
-        
+        public void GotoPerformance() => ActivateItem(new AddRecepieViewModel());
+        //For testing purposes name is diffrent
+
     }
 }

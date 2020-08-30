@@ -86,36 +86,40 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\FreeSearchViewModel.cs" />
-    <Compile Include="ViewModels\IngSearchListViewModel.cs" />
-    <Compile Include="ViewModels\PlannerViewModel.cs" />
-    <Compile Include="ViewModels\RecepieListViewModel.cs" />
-    <Compile Include="ViewModels\RecepieViewModel.cs" />
-    <Compile Include="ViewModels\SearchBarViewModel.cs" />
-    <Compile Include="ViewModels\ShellViewModel.cs" />
-    <Compile Include="ViewModels\TagBarViewModel.cs" />
-    <Compile Include="Views\FreeSearchView.xaml.cs">
+    <Compile Include="ViewModels\MainViews\AddRecepieViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\FreeSearchViewModel.cs" />
+    <Compile Include="ViewModels\SubViews\SearchIngListViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\PlannerViewModel.cs" />
+    <Compile Include="ViewModels\SubViews\SearchRecepieListViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\RecepieViewModel.cs" />
+    <Compile Include="ViewModels\Controls\SearchBarViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\ShellViewModel.cs" />
+    <Compile Include="ViewModels\Controls\TagBarViewModel.cs" />
+    <Compile Include="Views\MainViews\AddRecepieView.xaml.cs">
+      <DependentUpon>AddRecepieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\FreeSearchView.xaml.cs">
       <DependentUpon>FreeSearchView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\IngSearchListView.xaml.cs">
-      <DependentUpon>IngSearchListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PlannerView.xaml.cs">
+    <Compile Include="Views\MainViews\PlannerView.xaml.cs">
       <DependentUpon>PlannerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RecepieListView.xaml.cs">
-      <DependentUpon>RecepieListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RecepieView.xaml.cs">
+    <Compile Include="Views\MainViews\RecepieView.xaml.cs">
       <DependentUpon>RecepieView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SearchBarView.xaml.cs">
+    <Compile Include="Views\Controls\SearchBarView.xaml.cs">
       <DependentUpon>SearchBarView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ShellView.xaml.cs">
+    <Compile Include="Views\SubViews\SearchIngListView.xaml.cs">
+      <DependentUpon>SearchIngListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\SearchRecepieListView.xaml.cs">
+      <DependentUpon>SearchRecepieListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TagBarView.xaml.cs">
+    <Compile Include="Views\Controls\TagBarView.xaml.cs">
       <DependentUpon>TagBarView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -151,35 +155,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FreeSearchView.xaml">
+    <Page Include="Views\MainViews\AddRecepieView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\IngSearchListView.xaml">
+    <Page Include="Views\MainViews\FreeSearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PlannerView.xaml">
+    <Page Include="Views\MainViews\PlannerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RecepieListView.xaml">
+    <Page Include="Views\MainViews\RecepieView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RecepieView.xaml">
+    <Page Include="Views\Controls\SearchBarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SearchBarView.xaml">
+    <Page Include="Views\SubViews\SearchIngListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ShellView.xaml">
+    <Page Include="Views\SubViews\SearchRecepieListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TagBarView.xaml">
+    <Page Include="Views\MainViews\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\TagBarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,5 +213,9 @@
   <ItemGroup>
     <Resource Include="Assets\Icons\GroceryListIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\AddToFavoriteIcon.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

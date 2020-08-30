@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace HomemadeApp.Views
 {
     /// <summary>
-    /// Interaction logic for IngSearchListView.xaml
+    /// Interaction logic for SearchIngListView.xaml
     /// </summary>
-    public partial class IngSearchListView : UserControl
+    public partial class SearchIngListView : UserControl
     {
-        public IngSearchListView()
+        public SearchIngListView()
         {
             InitializeComponent();
         }

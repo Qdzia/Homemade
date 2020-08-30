@@ -14,7 +14,8 @@
     <BitmapImage x:Key="UserAccountIcon" UriSource="../Assets/Icons/UserAccountIcon.png"/>
     <BitmapImage x:Key="GroceryListIcon" UriSource="../Assets/Icons/GroceryListIcon.png"/>
     <BitmapImage x:Key="AddRecepieIcon" UriSource="../Assets/Icons/AddRecepieIcon.png"/>
-
+    <BitmapImage x:Key="AddToFavoriteIcon" UriSource="../Assets/Icons/AddToFavoriteIcon.png"/>
+    
     <Style x:Key="MenuButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />

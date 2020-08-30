@@ -1,14 +1,12 @@
-﻿<UserControl x:Class="HomemadeApp.Views.IngSearchListView"
+﻿<UserControl x:Class="HomemadeApp.Views.AddRecepieView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HomemadeApp.Views"
-             mc:Ignorable="d" 
+             mc:Ignorable="d" Background="DarkKhaki"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-
-        <DataGrid ItemsSource="{Binding IngList}" Margin="20"/>
-
+            
     </Grid>
 </UserControl>

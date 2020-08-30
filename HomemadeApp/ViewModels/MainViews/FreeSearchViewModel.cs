@@ -18,8 +18,8 @@ namespace HomemadeApp.ViewModels
         public TagBarViewModel TagBar { get; set; }
         public SearchBarViewModel SearchBar { get; set; }
 
-        public RecepieListViewModel SearchRecepieList { get; set; }
-        public IngSearchListViewModel SearchIngList { get; set; }
+        public SearchRecepieListViewModel SearchRecepieList { get; set; }
+        public SearchIngListViewModel SearchIngList { get; set; }
 
         public string SearchText { get; set; }
         public BindableCollection<TagBoxModel> TagList { get; set; }
@@ -63,11 +63,11 @@ namespace HomemadeApp.ViewModels
             SearchBar = new SearchBarViewModel();
 
 
-            SearchRecepieList = new RecepieListViewModel();
+            SearchRecepieList = new SearchRecepieListViewModel();
             SearchRecepieList.RecepieList = new BindableCollection<RecepieModel>();
             SearchRecepieList.RecepieList.AddRange(DataAccess.Instance.GetAllRec());
 
-            SearchIngList = new IngSearchListViewModel();
+            SearchIngList = new SearchIngListViewModel();
             SearchIngList.IngList = new BindableCollection<IngredientModel>();
             SearchIngList.IngList.AddRange(DataAccess.Instance.GetAllIng());
 

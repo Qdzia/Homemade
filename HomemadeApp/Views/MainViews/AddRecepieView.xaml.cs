@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace HomemadeApp.Views
 {
     /// <summary>
-    /// Interaction logic for RecepieListView.xaml
+    /// Interaction logic for AddRecepieView.xaml
     /// </summary>
-    public partial class RecepieListView : UserControl
+    public partial class AddRecepieView : UserControl
     {
-        public RecepieListView()
+        public AddRecepieView()
         {
             InitializeComponent();
         }

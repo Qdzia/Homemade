@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HomemadeApp.ViewModels
 {
-    class RecepieListViewModel : Screen
+    class SearchRecepieListViewModel : Screen
     {
         public BindableCollection<RecepieModel> RecepieList { get; set; }
 
