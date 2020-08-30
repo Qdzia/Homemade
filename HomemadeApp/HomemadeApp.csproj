@@ -86,6 +86,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\SubViews\AddIngredientViewModel.cs" />
+    <Compile Include="ViewModels\Controls\IngListViewModel.cs" />
     <Compile Include="ViewModels\MainViews\AddRecepieViewModel.cs" />
     <Compile Include="ViewModels\MainViews\FreeSearchViewModel.cs" />
     <Compile Include="ViewModels\SubViews\SearchIngListViewModel.cs" />
@@ -95,6 +97,12 @@
     <Compile Include="ViewModels\Controls\SearchBarViewModel.cs" />
     <Compile Include="ViewModels\MainViews\ShellViewModel.cs" />
     <Compile Include="ViewModels\Controls\TagBarViewModel.cs" />
+    <Compile Include="Views\SubViews\AddIngredientView.xaml.cs">
+      <DependentUpon>AddIngredientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\IngListView.xaml.cs">
+      <DependentUpon>IngListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainViews\AddRecepieView.xaml.cs">
       <DependentUpon>AddRecepieView.xaml</DependentUpon>
     </Compile>
@@ -152,6 +160,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Assets\AssetsDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubViews\AddIngredientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\IngListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
