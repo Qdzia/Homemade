@@ -12,6 +12,9 @@ namespace HomemadeApp.ViewModels
     {
         public IngListViewModel RecepieIngList { get; set; }
         public AddIngredientViewModel AddIng { get; set; }
+
+        public TimeEditViewModel PrepTimeEdit { get; set; }
+        public TimeEditViewModel TotalTimeEdit { get; set; }
         public AddRecepieViewModel()
         {
             RecepieIngList = new IngListViewModel();
@@ -20,6 +23,8 @@ namespace HomemadeApp.ViewModels
 
             AddIng = new AddIngredientViewModel();
 
+            PrepTimeEdit = new TimeEditViewModel();
+            TotalTimeEdit = new TimeEditViewModel();
 
         }
     }

@@ -23,12 +23,6 @@ namespace HomemadeApp.ViewModels
             Ingredients.AddRange(da.GetRecepieIngById(5));
         }
 
-        public string RecepieName { get { return Recepie.RecepieName; } }
-        public string Instruction { get { return Recepie.Instruction; } }
-        //public TimeSpan PrepTime { get; set; }
-        //public TimeSpan TotalTime { get; set; }
-        public string Video { get;}
-        public string Photo { get;}
 
         public RecepieModel Recepie { get; set; }
 

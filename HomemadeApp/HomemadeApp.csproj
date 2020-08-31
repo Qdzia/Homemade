@@ -86,6 +86,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\TimeEditViewModel.cs" />
     <Compile Include="ViewModels\SubViews\AddIngredientViewModel.cs" />
     <Compile Include="ViewModels\Controls\IngListViewModel.cs" />
     <Compile Include="ViewModels\MainViews\AddRecepieViewModel.cs" />
@@ -129,6 +130,9 @@
     </Compile>
     <Compile Include="Views\Controls\TagBarView.xaml.cs">
       <DependentUpon>TagBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeEditView.xaml.cs">
+      <DependentUpon>TimeEditView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Controls\TagBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

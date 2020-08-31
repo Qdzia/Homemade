@@ -42,6 +42,14 @@
             <TextBox x:Name="RecepieInstruction" Grid.Row="3" Grid.ColumnSpan="2" Text="TEEEEEEST"/>
             <TextBox x:Name="PathToPhoto" Grid.Row="4" Grid.Column="1" Text="TEEEEEEST"/>
             <TextBox x:Name="PathToVideo" Grid.Row="5" Grid.Column="1" Text="TEEEEEEST"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="2">
+                <Label Content=" Preparation Time: "/>
+                <ContentControl x:Name="PrepTimeEdit" />
+                <Label Content=" Total Time: "/>
+                <ContentControl x:Name="TotalTimeEdit" />
+            </StackPanel>
+            
         </Grid>
 
         <Grid Grid.Column="1">
