@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomemadeApp.Models
 {
-    class ItemListModel
+    public class ItemListModel
     {
         public string IngName { get; set; }
         public decimal Count { get; set; }
@@ -19,6 +19,13 @@ namespace HomemadeApp.Models
             Count = count;
             Unit = unit;
             Notes = notes;
+        }
+        public ItemListModel()
+        {
+            IngName = null;
+            Count = 0;
+            Unit = null;
+            Notes = null;
         }
 
         public override string ToString()
