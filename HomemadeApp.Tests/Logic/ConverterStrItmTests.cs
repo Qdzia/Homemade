@@ -11,15 +11,17 @@ namespace HomemadeApp.Tests.Logic
 {
     public class ConverterStrItmTests
     {
+   
+
         [Theory]
         [InlineData("1 kg marchew, diced", 1,"kg","marchew","diced")]
-        public void StringToItemListModel_ShouldCreateItemCorrectly
+        public void LineToItemListModel_ShouldCreateItemCorrectly
             (string strItem, decimal expCount, string expUnit, string expName,  string expNotes)
         {
             //Arragne, Act, Assert
             ConverterStrItm converter = new ConverterStrItm();
 
-            ItemListModel testItem = converter.StringToItemListModel(strItem);
+            ItemListModel testItem = converter.LineToItemListModel(strItem);
 
             Assert.Equal(expCount, testItem.Count);
             Assert.Equal(expUnit, testItem.Unit);

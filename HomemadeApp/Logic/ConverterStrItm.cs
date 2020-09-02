@@ -13,7 +13,20 @@ namespace HomemadeApp.Logic
     {
 
         //"-","g","dag","kg","ml","tbsp","tsp" (-|g|kg|ml|tbsp|tsp) (\d+)\s+(g|kg|ml|tbsp|tsp)
-        public ItemListModel StringToItemListModel(string strItem)
+
+        public List<ItemListModel> TextToItemListModel(string text)
+        {
+            var lines = text.Split('\n');
+            List<ItemListModel> list = new List<ItemListModel>();
+
+            foreach (var line in lines)
+            {
+                list.Add(LineToItemListModel(line.Trim()));
+            }
+
+            return list;
+        }
+        public ItemListModel LineToItemListModel(string strItem)
         {
             var item = new ItemListModel();
 

@@ -82,6 +82,7 @@
     <Build Include="dbo\Procedures\spRecepies_GetAllRec.sql" />
     <Build Include="dbo\Procedures\spTaged_SearchRecepieByTags.sql" />
     <Build Include="dbo\Procedures\spRecepies_SearchRecepieByName.sql" />
+    <Build Include="dbo\Procedures\spRecepies_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LocalDemoDB.publish.xml" />

@@ -59,6 +59,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             
             <Label Content="Ingredients: " Grid.Row="0" />
@@ -66,10 +67,10 @@
             
             <ContentControl x:Name="RecepieIngList" Grid.Row="1" Margin="10"/>
 
-            <TextBox x:Name="AddIngText" Grid.Row="3"  Text="TEEEEEEST"/>
-            
-            <Button Grid.Row="4" Content="Add Ingredients!"  Margin="5"/>
+            <TextBox x:Name="AddIngText" Grid.Row="3"  AcceptsReturn="True" TextWrapping="Wrap"/>
 
+            <Button x:Name="AddIngClick" Grid.Row="4" Content="Add Ingredients!"  Margin="5"/>
+            <Button x:Name="AddRecepieClick" Grid.Row="5" Content="Add Recepie!"  Margin="5"/>
         </Grid>
         
 

@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using HomemadeApp.Logic;
 using HomemadeApp.Models;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace HomemadeApp.ViewModels
 
         public TimeEditViewModel PrepTimeEdit { get; set; }
         public TimeEditViewModel TotalTimeEdit { get; set; }
+
+        public string AddIngText { get; set; }
+        public string RecepieName { get; set; }
+        public string RecepieInstruction { get; set; }
+        public string PathToPhoto { get; set; }
+        public string PathToVideo { get; set; }
         public AddRecepieViewModel()
         {
             RecepieIngList = new IngListViewModel();
@@ -25,7 +32,33 @@ namespace HomemadeApp.ViewModels
 
             PrepTimeEdit = new TimeEditViewModel();
             TotalTimeEdit = new TimeEditViewModel();
-
         }
+
+        public void AddIngClick()
+        {
+            ConverterStrItm con = new ConverterStrItm();
+            RecepieIngList.IngList.AddRange(con.TextToItemListModel(AddIngText));
+            AddIngText = "";
+            NotifyOfPropertyChange(() => AddIngText);
+        }
+
+        public void AddRecepieClick()
+        {
+            RecepieModel rec = new RecepieModel
+                (0, RecepieName, RecepieInstruction, PrepTimeEdit.Time,TotalTimeEdit.Time, PathToVideo, PathToPhoto,2,DateTime.Now,0);
+
+            DataAccess.Instance.InsertRecepie(rec);
+            ClearForm();
+        }
+
+        private void ClearForm()
+        {
+            AddIngText = "";
+            NotifyOfPropertyChange(() => AddIngText);
+            RecepieName = "";
+            NotifyOfPropertyChange(() => RecepieName);
+            RecepieInstruction = "";
+        }
+
     }
 }

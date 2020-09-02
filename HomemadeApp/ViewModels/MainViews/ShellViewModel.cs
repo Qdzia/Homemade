@@ -12,6 +12,7 @@ namespace HomemadeApp.ViewModels
         List<Screen> Screens { get; set; }
         public ShellViewModel()
         {
+            
         }
 
         public void GotoRecepie() => ActivateItem(new RecepieViewModel());

@@ -108,9 +108,22 @@ namespace HomemadeApp
             name = "%" + name.Trim() + "%";
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
             {
-                var output = connection.Query<RecepieModel>($" spRecepies_SearchRecepieByName @Name", new { Name = name }).ToList();
+                var output = connection.Query<RecepieModel>($"spRecepies_SearchRecepieByName @Name", new { Name = name }).ToList();
                 return output;
             }
+        }
+
+        public void InsertRecepie(RecepieModel rec)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                List<RecepieModel> recList = new List<RecepieModel>();
+                recList.Add(rec);
+
+                connection.Execute("spRecepies_Insert @RecepieName, @Instruction, @PrepTime, @TotalTime,@Video,@Photo,@UserId,@CreatedAt", recList);
+
+            }
+
         }
     }
 }
