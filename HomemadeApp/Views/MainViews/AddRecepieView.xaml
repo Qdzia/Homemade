@@ -33,20 +33,20 @@
             </Grid.RowDefinitions>
 
             <TextBlock Text="Add Your Favorite Recepie" FontSize="30" Grid.ColumnSpan="2"/>
-            <Label Content="Name: " Grid.Row="1" />
-            <Label Content="Preparation: " Grid.Row="2" Grid.ColumnSpan="2"/>
-            <Label Content="Path to Photo: " Grid.Row="4" />
-            <Label Content="Path to Video: " Grid.Row="5" />
+            <Label Content="Name: " Grid.Row="1" Style="{StaticResource FormLabelStyle}"/>
+            <Label Content="Preparation: " Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource FormLabelStyle}"/>
+            <Label Content="Path to Photo: " Grid.Row="4" Style="{StaticResource FormLabelStyle}"/>
+            <Label Content="Path to Video: " Grid.Row="5" Style="{StaticResource FormLabelStyle}"/>
 
-            <TextBox x:Name="RecepieName" Grid.Row="1" Grid.Column="1" Text="TEEEEEEST"/>
-            <TextBox x:Name="RecepieInstruction" Grid.Row="3" Grid.ColumnSpan="2" Text="TEEEEEEST"/>
-            <TextBox x:Name="PathToPhoto" Grid.Row="4" Grid.Column="1" Text="TEEEEEEST"/>
-            <TextBox x:Name="PathToVideo" Grid.Row="5" Grid.Column="1" Text="TEEEEEEST"/>
+            <TextBox x:Name="RecepieName" Grid.Row="1" Grid.Column="1" Style="{StaticResource FormTextBoxStyle}"/>
+            <TextBox x:Name="RecepieInstruction" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource FormBigTextBoxStyle}"/>
+            <TextBox x:Name="PathToPhoto" Grid.Row="4" Grid.Column="1" Style="{StaticResource FormTextBoxStyle}"/>
+            <TextBox x:Name="PathToVideo" Grid.Row="5" Grid.Column="1" Style="{StaticResource FormTextBoxStyle}"/>
 
             <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="2">
-                <Label Content=" Preparation Time: "/>
+                <Label Content=" Preparation Time: " Style="{StaticResource FormLabelStyle}"/>
                 <ContentControl x:Name="PrepTimeEdit" />
-                <Label Content=" Total Time: "/>
+                <Label Content=" Total Time: " Style="{StaticResource FormLabelStyle}"/>
                 <ContentControl x:Name="TotalTimeEdit" />
             </StackPanel>
             
@@ -61,16 +61,16 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            
-            <Label Content="Ingredients: " Grid.Row="0" />
-            <Label Content="Paste Your List Here: " Grid.Row="2" />
+
+            <Label Content="Ingredients: " Grid.Row="0" Style="{StaticResource FormLabelStyle}" />
+            <Label Content="Paste Your List Here: " Grid.Row="2" Style="{StaticResource FormLabelStyle}"/>
             
             <ContentControl x:Name="RecepieIngList" Grid.Row="1" Margin="10"/>
 
-            <TextBox x:Name="AddIngText" Grid.Row="3"  AcceptsReturn="True" TextWrapping="Wrap"/>
+            <TextBox x:Name="AddIngText" Grid.Row="3" Style="{StaticResource FormBigTextBoxStyle}"/>
 
-            <Button x:Name="AddIngClick" Grid.Row="4" Content="Add Ingredients!"  Margin="5"/>
-            <Button x:Name="AddRecepieClick" Grid.Row="5" Content="Add Recepie!"  Margin="5"/>
+            <Button x:Name="AddIngClick" Grid.Row="4" Content="Add Ingredients!"  Style="{StaticResource NormalButtonStyle}"/>
+            <Button x:Name="AddRecepieClick" Grid.Row="5" Content="Add Recepie!"  Style="{StaticResource NormalButtonStyle}"/>
         </Grid>
         
 
