@@ -12,7 +12,7 @@ namespace HomemadeApp.ViewModels
         List<Screen> Screens { get; set; }
         public ShellViewModel()
         {
-            
+            ApiHelper.InitializeClient();
         }
 
         public void GotoRecepie() => ActivateItem(new RecepieViewModel());

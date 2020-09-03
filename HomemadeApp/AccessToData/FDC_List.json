@@ -1,0 +1,267 @@
+﻿[
+  {
+    "fdcId": 167782,
+    "description": "Abiyuch, raw",
+    "dataType": "SR Legacy",
+    "publicationDate": "2019-04-01",
+    "ndbNumber": "9427",
+    "foodNutrients": [
+      {
+        "number": "318",
+        "name": "Vitamin A, IU",
+        "amount": 100.00000000,
+        "unitName": "IU",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "268",
+        "name": "Energy",
+        "amount": 290.00000000,
+        "unitName": "kJ",
+        "derivationCode": "NC",
+        "derivationDescription": "Calculated"
+      },
+      {
+        "number": "205",
+        "name": "Carbohydrate, by difference",
+        "amount": 17.60000000,
+        "unitName": "G",
+        "derivationCode": "NC",
+        "derivationDescription": "Calculated"
+      },
+      {
+        "number": "208",
+        "name": "Energy",
+        "amount": 69.00000000,
+        "unitName": "KCAL",
+        "derivationCode": "NC",
+        "derivationDescription": "Calculated"
+      },
+      {
+        "number": "319",
+        "name": "Retinol",
+        "amount": 0E-8,
+        "unitName": "UG",
+        "derivationCode": "Z",
+        "derivationDescription": "Assumed zero (Insignificant amount or not naturally occurring in a food, such as fiber in meat)"
+      },
+      {
+        "number": "320",
+        "name": "Vitamin A, RAE",
+        "amount": 5.00000000,
+        "unitName": "UG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "605",
+        "name": "Fatty acids, total trans",
+        "amount": 0E-8,
+        "unitName": "G",
+        "derivationCode": "Z",
+        "derivationDescription": "Assumed zero (Insignificant amount or not naturally occurring in a food, such as fiber in meat)"
+      },
+      {
+        "number": "301",
+        "name": "Calcium, Ca",
+        "amount": 8.00000000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "306",
+        "name": "Potassium, K",
+        "amount": 304.00000000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "309",
+        "name": "Zinc, Zn",
+        "amount": 0.31000000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "210",
+        "name": "Sucrose",
+        "amount": 0.05000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "211",
+        "name": "Glucose (dextrose)",
+        "amount": 4.50000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "214",
+        "name": "Maltose",
+        "amount": 0.20000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "255",
+        "name": "Water",
+        "amount": 79.90000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "204",
+        "name": "Total lipid (fat)",
+        "amount": 0.10000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "203",
+        "name": "Protein",
+        "amount": 1.50000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "207",
+        "name": "Ash",
+        "amount": 0.90000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "212",
+        "name": "Fructose",
+        "amount": 3.80000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "606",
+        "name": "Fatty acids, total saturated",
+        "amount": 0.01400000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "321",
+        "name": "Carotene, beta",
+        "amount": 60.00000000,
+        "unitName": "UG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "322",
+        "name": "Carotene, alpha",
+        "amount": 0E-8,
+        "unitName": "UG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "401",
+        "name": "Vitamin C, total ascorbic acid",
+        "amount": 54.10000000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "291",
+        "name": "Fiber, total dietary",
+        "amount": 5.30000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "303",
+        "name": "Iron, Fe",
+        "amount": 1.61000000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "304",
+        "name": "Magnesium, Mg",
+        "amount": 24.00000000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "305",
+        "name": "Phosphorus, P",
+        "amount": 47.00000000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "307",
+        "name": "Sodium, Na",
+        "amount": 20.00000000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "312",
+        "name": "Copper, Cu",
+        "amount": 0.05700000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "315",
+        "name": "Manganese, Mn",
+        "amount": 0.18200000,
+        "unitName": "MG",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "269",
+        "name": "Sugars, total including NLEA",
+        "amount": 8.55000000,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "213",
+        "name": "Lactose",
+        "amount": 0E-8,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      },
+      {
+        "number": "287",
+        "name": "Galactose",
+        "amount": 0E-8,
+        "unitName": "G",
+        "derivationCode": "A",
+        "derivationDescription": "Analytical"
+      }
+    ]
+  }
+]
