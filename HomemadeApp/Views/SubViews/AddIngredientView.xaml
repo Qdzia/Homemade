@@ -38,8 +38,8 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Search: " Grid.Column="0" Style="{StaticResource FormLabelStyle}" />
-            <TextBox x:Name="SearchIng"  Grid.Column="1" Margin="10" Style="{StaticResource FormTextBoxStyle}"/>
-            <Button x:Name="SearchIngClick" Grid.Column="2" Content=" Find It! " Style="{StaticResource NormalButtonStyle}"/>
+            <TextBox x:Name="SearchPhrase"  Grid.Column="1" Margin="10" Style="{StaticResource FormTextBoxStyle}"/>
+            <Button x:Name="SearchPhraseClick" Grid.Column="2" Content=" Find It! " Style="{StaticResource NormalButtonStyle}"/>
 
         </Grid>
     </Grid>

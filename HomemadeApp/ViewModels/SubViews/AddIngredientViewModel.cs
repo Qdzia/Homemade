@@ -36,6 +36,7 @@ namespace HomemadeApp.ViewModels
         {
             get { return PrepareIngData(); }
         }
+        public string SearchPhrase { get; set; }
 
         public AddIngredientViewModel()
         {
@@ -47,9 +48,10 @@ namespace HomemadeApp.ViewModels
 
         }
 
-        public async void SearchIngClick()
+        public async void SearchPhraseClick()
         {
-            _searchData = await FoodDataCentralProcessor.LoadFood();
+            _searchData = await FoodDataCentralProcessor.SearchForFood(SearchPhrase);
+            UsdaIngList.Clear();
             UsdaIngList.AddRange(_searchData.Foods);
         }
 
