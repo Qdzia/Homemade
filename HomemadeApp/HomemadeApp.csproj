@@ -89,6 +89,9 @@
     <Compile Include="Models\RecepieModel.cs" />
     <Compile Include="Models\TagBoxModel.cs" />
     <Compile Include="Models\TagModel.cs" />
+    <Compile Include="Models\UsdaModels\UsdaSearchFoodModel.cs" />
+    <Compile Include="Models\UsdaModels\UsdaSearchModel.cs" />
+    <Compile Include="Models\UsdaModels\UsdaSearchFoodNutrientModel.cs" />
     <Compile Include="RecepieSample.cs" />
     <Compile Include="UnitTesting.cs" />
     <Compile Include="App.xaml.cs">
