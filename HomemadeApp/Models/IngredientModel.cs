@@ -40,5 +40,6 @@ namespace HomemadeApp.Models
             Cholesterol = cholesterol;
 
         }
+        public IngredientModel(){}
     }
 }

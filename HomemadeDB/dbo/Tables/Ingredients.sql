@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[Ingredients]
 (
 	[IngId] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [IngName] NCHAR(10) NOT NULL, 
+    [IngName] NVARCHAR(50) NOT NULL, 
     [Category] INT NOT NULL,
     [Calories] DECIMAL NULL, 
     [Fat] DECIMAL NULL, 

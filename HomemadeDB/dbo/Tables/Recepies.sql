@@ -2,7 +2,7 @@
 (
 	[RecepieId] INT NOT NULL PRIMARY KEY IDENTITY, 
     [RecepieName] NVARCHAR(50) NOT NULL, 
-    [Instruction] NVARCHAR(1000) NULL, 
+    [Instruction] NVARCHAR(2000) NULL, 
     [PrepTime] TIME NULL, 
     [TotalTime] TIME NULL, 
     [Video] NVARCHAR(200) NULL, 

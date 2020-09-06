@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spRecepies_Insert]
 	@RecepieName NVARCHAR(50),
-	@Instruction NVARCHAR(1000) NULL, 
+	@Instruction NVARCHAR(2000) NULL, 
     @PrepTime TIME NULL, 
     @TotalTime TIME NULL, 
     @Video NVARCHAR(200) NULL, 

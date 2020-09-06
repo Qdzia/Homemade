@@ -10,11 +10,16 @@ using System.Threading.Tasks;
 
 namespace HomemadeApp.ViewModels
 {
-    class AddIngredientViewModel : Screen 
+    class AddIngredientViewModel : Screen
     {
         public BindableCollection<UsdaSearchFoodModel> UsdaIngList { get; set; }
         private UsdaSearchModel _searchData;
 
+        public string[] Categories { get; set; } = { "Dark-Green Vegetables", 
+            "Red & Orange Vegetables", "Legumes(Beans & Peas)", 
+            "Starchy Vegetables", "Other Vegetables", "Protein Foods", 
+            "Grains", "Fruits", "Dairy", "Oils", "Others" };
+        public string SelectedCategory { get; set; }
 
         private UsdaSearchFoodModel _selectedFood;
 
@@ -45,7 +50,6 @@ namespace HomemadeApp.ViewModels
             _selectedFood = new UsdaSearchFoodModel();
             _selectedFood.FoodNutrients = new List<UsdaSearchFoodNutrientModel>();
 
-
         }
 
         public async void SearchPhraseClick()
@@ -65,6 +69,28 @@ namespace HomemadeApp.ViewModels
             }
 
             return result;
+        }
+
+        public void AddToBaseClick()
+        {
+            IngredientModel ing = new IngredientModel();
+            ing.IngName = IngName;
+            ing.Category = Array.IndexOf(Categories,SelectedCategory);
+
+            foreach (var nutrient in SelectedFood.FoodNutrients)
+            {
+                if (nutrient.NutrientId == 2000) ing.Sugar = nutrient.Value;
+                if (nutrient.NutrientId == 1003) ing.Protein = nutrient.Value;
+                if (nutrient.NutrientId == 1253) ing.Cholesterol = nutrient.Value;
+                if (nutrient.NutrientId == 1258) ing.TransFat = nutrient.Value;
+                if (nutrient.NutrientId == 1079) ing.Fiber = nutrient.Value;
+                if (nutrient.NutrientId == 1093) ing.Sodium = nutrient.Value;
+                if (nutrient.NutrientId == 1005) ing.Carbs = nutrient.Value;
+                if (nutrient.NutrientId == 1008) ing.Calories = nutrient.Value;
+                if (nutrient.NutrientId == 1004) ing.Fat = nutrient.Value;
+            }
+        
+        
         }
     }
 }
