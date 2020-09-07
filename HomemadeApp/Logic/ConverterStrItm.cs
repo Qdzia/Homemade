@@ -12,10 +12,13 @@ namespace HomemadeApp.Logic
     public class ConverterStrItm
     {
 
-        //"-","g","dag","kg","ml","tbsp","tsp" (-|g|kg|ml|tbsp|tsp) (\d+)\s+(g|kg|ml|tbsp|tsp)
+        //"-","g","dag","kg","ml","tbsp","tsp" (-|g|kg|ml|tbsp|tsp) (\d+)\s+(g|kg|ml|l|tbsp|tsp|cloves)
 
         public List<ItemListModel> TextToItemListModel(string text)
         {
+            text = text.Trim();
+            text = text.Replace("teaspoon", "tsp");
+            text = text.Replace("tablespoon", "tbsp");
             var lines = text.Split('\n');
             List<ItemListModel> list = new List<ItemListModel>();
 
@@ -31,7 +34,7 @@ namespace HomemadeApp.Logic
             var item = new ItemListModel();
 
             item.Notes = FindNotes(ref strItem);
-            item.Count = FindCount(ref strItem);
+            item.Number = FindCount(ref strItem);
             item.Unit = FindUnit(ref strItem);
             item.IngName = strItem;
 
@@ -85,7 +88,7 @@ namespace HomemadeApp.Logic
 
         public string FindUnit(ref string strItem)
         {
-            Regex r = new Regex(@"(g|kg|ml|tbsp|tsp)\s+([\s\S]*)", RegexOptions.IgnoreCase);
+            Regex r = new Regex(@"(g|kg|ml|l|tbsp|tsp|cloves)\s+([\s\S]*)", RegexOptions.IgnoreCase);
             Match m = r.Match(strItem);
 
             string unit = "";

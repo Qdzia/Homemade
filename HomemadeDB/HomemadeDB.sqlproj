@@ -84,6 +84,7 @@
     <Build Include="dbo\Procedures\spRecepies_SearchRecepieByName.sql" />
     <Build Include="dbo\Procedures\spRecepies_Insert.sql" />
     <Build Include="dbo\Procedures\spIngredients_Insert.sql" />
+    <Build Include="dbo\Procedures\spContain_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LocalDemoDB.publish.xml" />

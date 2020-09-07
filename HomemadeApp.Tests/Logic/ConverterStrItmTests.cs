@@ -23,7 +23,7 @@ namespace HomemadeApp.Tests.Logic
 
             ItemListModel testItem = converter.LineToItemListModel(strItem);
 
-            Assert.Equal(expCount, testItem.Count);
+            Assert.Equal(expCount, testItem.Number);
             Assert.Equal(expUnit, testItem.Unit);
             Assert.Equal(expName, testItem.IngName);
             Assert.Equal(expNotes, testItem.Notes);

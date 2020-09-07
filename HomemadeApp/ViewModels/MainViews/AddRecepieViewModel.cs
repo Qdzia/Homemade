@@ -24,14 +24,8 @@ namespace HomemadeApp.ViewModels
         public string PathToVideo { get; set; }
         public AddRecepieViewModel()
         {
-            RecepieIngList = new IngListViewModel();
-            RecepieIngList.IngList = new BindableCollection<ItemListModel>();
-            RecepieIngList.IngList.Add(new ItemListModel("Carrot", 23, "Kg", "To jest to"));
-
+            ClearForm();
             AddIng = new AddIngredientViewModel();
-
-            PrepTimeEdit = new TimeEditViewModel();
-            TotalTimeEdit = new TimeEditViewModel();
 
         }
 
@@ -66,10 +60,25 @@ namespace HomemadeApp.ViewModels
         private void ClearForm()
         {
             AddIngText = "";
-            NotifyOfPropertyChange(() => AddIngText);
             RecepieName = "";
-            NotifyOfPropertyChange(() => RecepieName);
             RecepieInstruction = "";
+            PathToPhoto = "";
+            PathToVideo = "";
+
+            RecepieIngList = new IngListViewModel();
+            RecepieIngList.IngList = new BindableCollection<ItemListModel>();
+
+            PrepTimeEdit = new TimeEditViewModel();
+            TotalTimeEdit = new TimeEditViewModel();
+
+            NotifyOfPropertyChange(() => AddIngText);
+            NotifyOfPropertyChange(() => RecepieName);
+            NotifyOfPropertyChange(() => RecepieInstruction);
+            NotifyOfPropertyChange(() => PathToPhoto);
+            NotifyOfPropertyChange(() => PathToVideo);
+            NotifyOfPropertyChange(() => RecepieIngList);
+            NotifyOfPropertyChange(() => PrepTimeEdit);
+            NotifyOfPropertyChange(() => TotalTimeEdit);
         }
 
     }

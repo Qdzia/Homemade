@@ -2,7 +2,7 @@
 (
 	[RecepieId] INT NOT NULL, 
     [IngId] INT NOT NULL, 
-    [Count] DECIMAL NOT NULL, 
+    [Number] DECIMAL NOT NULL, 
     [Unit] NVARCHAR(50) NOT NULL, 
     [Notes] NVARCHAR(50) NULL, 
     CONSTRAINT [FK_Contain_Recepies] FOREIGN KEY ([RecepieId]) REFERENCES [Recepies]([RecepieId]), 

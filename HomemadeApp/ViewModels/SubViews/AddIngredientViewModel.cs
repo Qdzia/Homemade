@@ -29,7 +29,8 @@ namespace HomemadeApp.ViewModels
             set 
             { 
                 _selectedFood = value;
-                IngName = value.Description;
+                if (value != null) IngName = value.Description.ToLower();
+                else IngName = "";
                 NotifyOfPropertyChange(() => IngData); 
                 NotifyOfPropertyChange(() => IngName); 
             }
@@ -50,8 +51,6 @@ namespace HomemadeApp.ViewModels
             _selectedFood = new UsdaSearchFoodModel();
             _selectedFood.FoodNutrients = new List<UsdaSearchFoodNutrientModel>();
 
-
-
         }
 
         public async void SearchPhraseClick()
@@ -65,10 +64,19 @@ namespace HomemadeApp.ViewModels
         {
             string result = "";
 
+            if(SelectedFood == null ) return result;
+
             foreach (var nutrient in SelectedFood.FoodNutrients)
             {
-                result += nutrient.ToString()+'\n';
+                if (nutrient.NutrientId == 2000 || nutrient.NutrientId == 1003 || nutrient.NutrientId == 1253 || nutrient.NutrientId == 1258 || 
+                    nutrient.NutrientId == 1079 || nutrient.NutrientId == 1093 || nutrient.NutrientId == 1005 || nutrient.NutrientId == 1008 || 
+                    nutrient.NutrientId == 1004) result += nutrient.ToString() + '\n';
             }
+            //Display all labels
+            //foreach (var nutrient in SelectedFood.FoodNutrients)
+            //{
+            //    result += nutrient.ToString()+'\n';
+            //}
 
             return result;
         }
@@ -94,6 +102,8 @@ namespace HomemadeApp.ViewModels
             }
 
             DataAccess.Instance.InsertIng(ing);
+
+            SelectedFood = null;
         }
     }
 }
