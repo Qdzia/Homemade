@@ -38,6 +38,19 @@ namespace HomemadeApp.Logic
             return item;
         }
 
+        public bool IsNameExistInDB(string name) 
+        {
+            var allIng = DataAccess.Instance.GetAllIng();
+            List<string> allIngNames = new List<string>();
+            allIng.ForEach(x => allIngNames.Add(x.IngName));
+
+            foreach (var ingName in allIngNames)
+            {
+                if (ingName == name) return true;
+            }
+            return false;
+        }
+
         public string FindNotes(ref string strItem)
         {
             if (strItem.Contains(','))

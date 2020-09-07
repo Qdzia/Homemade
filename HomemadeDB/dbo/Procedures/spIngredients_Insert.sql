@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spIngredients_Insert]
-    @IngName NVARCHAR(50) NOT NULL,
+    @IngName NVARCHAR(50) NULL,
+    @Category INT NULL,
     @Calories DECIMAL NULL, 
     @Fat DECIMAL NULL, 
     @Carbs DECIMAL NULL, 
@@ -14,5 +15,5 @@ BEGIN
     INSERT INTO Ingredients
     (IngName, Category, Calories, Fat, Carbs, Fiber, Sugar, Protein, Sodium, TransFat, Cholesterol)
     VALUES 
-    (@IngName,1, @Calories, @Fat, @Carbs, @Fiber, @Sugar, @Protein, @Sodium, @TransFat, @Cholesterol);
+    (@IngName,@Category, @Calories, @Fat, @Carbs, @Fiber, @Sugar, @Protein, @Sodium, @TransFat, @Cholesterol);
 END

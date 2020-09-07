@@ -32,12 +32,24 @@ namespace HomemadeApp.ViewModels
 
             PrepTimeEdit = new TimeEditViewModel();
             TotalTimeEdit = new TimeEditViewModel();
+
         }
 
         public void AddIngClick()
         {
             ConverterStrItm con = new ConverterStrItm();
-            RecepieIngList.IngList.AddRange(con.TextToItemListModel(AddIngText));
+            List<ItemListModel> itemlist = new List<ItemListModel>(con.TextToItemListModel(AddIngText));
+
+            foreach (var item in itemlist)
+            {
+                if (!con.IsNameExistInDB(item.IngName))
+                {
+                    AddIngText += $"\n*{item.IngName}, not exist in DB*";
+                    NotifyOfPropertyChange(() => AddIngText);
+                    return;
+                }
+            }
+            RecepieIngList.IngList.AddRange(itemlist);
             AddIngText = "";
             NotifyOfPropertyChange(() => AddIngText);
         }

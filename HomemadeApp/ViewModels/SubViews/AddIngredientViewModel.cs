@@ -50,6 +50,8 @@ namespace HomemadeApp.ViewModels
             _selectedFood = new UsdaSearchFoodModel();
             _selectedFood.FoodNutrients = new List<UsdaSearchFoodNutrientModel>();
 
+
+
         }
 
         public async void SearchPhraseClick()
@@ -74,7 +76,8 @@ namespace HomemadeApp.ViewModels
         public void AddToBaseClick()
         {
             IngredientModel ing = new IngredientModel();
-            ing.IngName = IngName;
+            ing.IngName = IngName.ToLower();
+
             ing.Category = Array.IndexOf(Categories,SelectedCategory);
 
             foreach (var nutrient in SelectedFood.FoodNutrients)
@@ -89,8 +92,8 @@ namespace HomemadeApp.ViewModels
                 if (nutrient.NutrientId == 1008) ing.Calories = nutrient.Value;
                 if (nutrient.NutrientId == 1004) ing.Fat = nutrient.Value;
             }
-        
-        
+
+            DataAccess.Instance.InsertIng(ing);
         }
     }
 }

@@ -121,9 +121,18 @@ namespace HomemadeApp
                 recList.Add(rec);
 
                 connection.Execute("spRecepies_Insert @RecepieName, @Instruction, @PrepTime, @TotalTime,@Video,@Photo,@UserId,@CreatedAt", recList);
-
             }
+        }
+        //spIngredients_Insert
+        public void InsertIng(IngredientModel ing)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                List<IngredientModel> ingList = new List<IngredientModel>();
+                ingList.Add(ing);
 
+                connection.Execute("spIngredients_Insert @IngName, @Category, @Calories, @Fat, @Carbs, @Fiber, @Sugar, @Protein, @Sodium, @TransFat, @Cholesterol", ingList);
+            }
         }
     }
 }
