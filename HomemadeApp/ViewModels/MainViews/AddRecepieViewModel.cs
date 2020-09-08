@@ -32,11 +32,12 @@ namespace HomemadeApp.ViewModels
         public void AddIngClick()
         {
             ConverterStrItm con = new ConverterStrItm();
-            List<ItemListModel> itemlist = new List<ItemListModel>(con.TextToItemListModel(AddIngText));
+            List<IngListModel> itemlist = new List<IngListModel>(con.TextToItemListModel(AddIngText));
 
             foreach (var item in itemlist)
             {
-                if (!con.IsNameExistInDB(item.IngName))
+                item.IngId = con.VerifyName(item);
+                if (item.IngId == -1)
                 {
                     AddIngText += $"\n*{item.IngName}, not exist in DB*";
                     NotifyOfPropertyChange(() => AddIngText);
@@ -53,8 +54,20 @@ namespace HomemadeApp.ViewModels
             RecepieModel rec = new RecepieModel
                 (0, RecepieName, RecepieInstruction, PrepTimeEdit.Time,TotalTimeEdit.Time, PathToVideo, PathToPhoto,2,DateTime.Now,0);
 
-            DataAccess.Instance.InsertRecepie(rec);
+            var recIndx = DataAccess.Instance.InsertRecepie(rec);
+            InsertIngredients(recIndx);
             ClearForm();
+        }
+
+        public void InsertIngredients(int recIndx)
+        {
+            List<ContainModel> ings = new List<ContainModel>();
+            foreach (var ing in RecepieIngList.IngList)
+            {
+                ings.Add(new ContainModel(recIndx,ing.IngId,ing.Number,ing.Unit,ing.Notes));
+            }
+            DataAccess.Instance.InsertRecepieIng(ings);
+        
         }
 
         private void ClearForm()
@@ -66,7 +79,7 @@ namespace HomemadeApp.ViewModels
             PathToVideo = "";
 
             RecepieIngList = new IngListViewModel();
-            RecepieIngList.IngList = new BindableCollection<ItemListModel>();
+            RecepieIngList.IngList = new BindableCollection<IngListModel>();
 
             PrepTimeEdit = new TimeEditViewModel();
             TotalTimeEdit = new TimeEditViewModel();

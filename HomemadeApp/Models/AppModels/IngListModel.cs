@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace HomemadeApp.Models
 {
-    public class ItemListModel
+    public class IngListModel
     {
+        public int IngId { get; set; }
         public string IngName { get; set; }
         public decimal Number { get; set; }
         public string Unit { get; set; }
         public string Notes { get; set; }
 
-        public ItemListModel(string ingName, decimal count, string unit, string notes)
+        public IngListModel(string ingName, decimal number, string unit, string notes)
         {
             IngName = ingName;
-            Number = count;
+            Number = number;
             Unit = unit;
             Notes = notes;
         }
-        public ItemListModel()
+        public IngListModel()
         {
             IngName = null;
             Number = 0;

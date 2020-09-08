@@ -10,7 +10,7 @@ namespace HomemadeApp.ViewModels
 {
     class IngListViewModel : Screen
     {
-        public BindableCollection<ItemListModel> IngList { get; set; }
+        public BindableCollection<IngListModel> IngList { get; set; }
 
     }
 }

@@ -12,11 +12,11 @@ namespace HomemadeApp.ViewModels
     {
         //D:\Documents\RecepieDB\AppTest\ChickenChowMein.mp4
 
-        public BindableCollection<ItemListModel> Ingredients { get; }
+        public BindableCollection<IngListModel> Ingredients { get; }
 
         public RecepieViewModel()
         {
-            Ingredients = new BindableCollection<ItemListModel>();
+            Ingredients = new BindableCollection<IngListModel>();
             DataAccess da = DataAccess.Instance;
             Recepie = da.GetRecepieById(5)[0];
 

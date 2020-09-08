@@ -14,13 +14,13 @@ namespace HomemadeApp.Logic
 
         //"-","g","dag","kg","ml","tbsp","tsp" (-|g|kg|ml|tbsp|tsp) (\d+)\s+(g|kg|ml|l|tbsp|tsp|cloves)
 
-        public List<ItemListModel> TextToItemListModel(string text)
+        public List<IngListModel> TextToItemListModel(string text)
         {
             text = text.Trim();
             text = text.Replace("teaspoon", "tsp");
             text = text.Replace("tablespoon", "tbsp");
             var lines = text.Split('\n');
-            List<ItemListModel> list = new List<ItemListModel>();
+            List<IngListModel> list = new List<IngListModel>();
 
             foreach (var line in lines)
             {
@@ -29,9 +29,9 @@ namespace HomemadeApp.Logic
 
             return list;
         }
-        public ItemListModel LineToItemListModel(string strItem)
+        public IngListModel LineToItemListModel(string strItem)
         {
-            var item = new ItemListModel();
+            var item = new IngListModel();
 
             item.Notes = FindNotes(ref strItem);
             item.Number = FindCount(ref strItem);
@@ -41,17 +41,15 @@ namespace HomemadeApp.Logic
             return item;
         }
 
-        public bool IsNameExistInDB(string name) 
+        public int VerifyName(IngListModel ing) 
         {
-            var allIng = DataAccess.Instance.GetAllIng();
-            List<string> allIngNames = new List<string>();
-            allIng.ForEach(x => allIngNames.Add(x.IngName));
+            var dbIngs = DataAccess.Instance.GetAllIng();
 
-            foreach (var ingName in allIngNames)
+            foreach (var dbIng in dbIngs)
             {
-                if (ingName == name) return true;
+                if (ing.IngName == dbIng.IngName) return dbIng.IngId;
             }
-            return false;
+            return -1;
         }
 
         public string FindNotes(ref string strItem)

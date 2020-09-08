@@ -41,11 +41,11 @@ namespace HomemadeApp
             }
         }
 
-        public List<ItemListModel> GetRecepieIngById(int recepieId)
+        public List<IngListModel> GetRecepieIngById(int recepieId)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
             {
-                var output = connection.Query<ItemListModel>($"spContain_GetRecepieIngById @RecepieId", new { RecepieId = recepieId }).ToList();
+                var output = connection.Query<IngListModel>($"spContain_GetRecepieIngById @RecepieId", new { RecepieId = recepieId }).ToList();
                 return output;
             }
         }
@@ -113,7 +113,7 @@ namespace HomemadeApp
             }
         }
 
-        public void InsertRecepie(RecepieModel rec)
+        public int InsertRecepie(RecepieModel rec)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
             {
@@ -121,6 +121,18 @@ namespace HomemadeApp
                 recList.Add(rec);
 
                 connection.Execute("spRecepies_Insert @RecepieName, @Instruction, @PrepTime, @TotalTime,@Video,@Photo,@UserId,@CreatedAt", recList);
+                var indx = connection.Query<InsertedIdModel>("SELECT IDENT_CURRENT ('Recepies') AS InsertedId");
+
+                return indx.ToArray()[0].InsertedId;
+            }
+        }
+
+        public void InsertRecepieIng(List<ContainModel> ings)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                connection.Execute("spContain_Insert @RecepieId, @IngId, @Number, @Unit, @Notes", ings);
+
             }
         }
         //spIngredients_Insert

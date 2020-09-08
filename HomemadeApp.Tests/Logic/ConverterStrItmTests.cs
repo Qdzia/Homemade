@@ -21,7 +21,7 @@ namespace HomemadeApp.Tests.Logic
             //Arragne, Act, Assert
             ConverterStrItm converter = new ConverterStrItm();
 
-            ItemListModel testItem = converter.LineToItemListModel(strItem);
+            IngListModel testItem = converter.LineToItemListModel(strItem);
 
             Assert.Equal(expCount, testItem.Number);
             Assert.Equal(expUnit, testItem.Unit);
