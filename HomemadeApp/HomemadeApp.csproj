@@ -255,6 +255,9 @@
   <ItemGroup>
     <Resource Include="Assets\Icons\AddToFavoriteIcon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Icons\ArrowLeftIcon.png" />
+    <Resource Include="Assets\Icons\ArrowRightIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

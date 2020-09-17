@@ -14,11 +14,11 @@ namespace HomemadeApp.ViewModels
 
         public BindableCollection<IngListModel> Ingredients { get; }
 
-        public RecepieViewModel()
+        public RecepieViewModel(int recId)
         {
             Ingredients = new BindableCollection<IngListModel>();
             DataAccess da = DataAccess.Instance;
-            Recepie = da.GetRecepieById(5)[0];
+            Recepie = da.GetRecepieById(recId)[0];
 
             Ingredients.AddRange(da.GetRecepieIngById(5));
         }

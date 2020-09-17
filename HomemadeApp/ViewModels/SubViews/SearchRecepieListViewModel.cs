@@ -10,6 +10,8 @@ namespace HomemadeApp.ViewModels
 {
     class SearchRecepieListViewModel : Screen
     {
+        public event EventHandler<int> OnRecepieClickSR;
+
         public BindableCollection<RecepieModel> RecepieList { get; set; }
 
         public void UpdateList(List<string> tags)
@@ -19,6 +21,12 @@ namespace HomemadeApp.ViewModels
             NotifyOfPropertyChange(() => RecepieList);
 
         }
+
+        public void RecepieClick(RecepieModel rec)
+        {
+            OnRecepieClickSR?.Invoke(this, rec.RecepieId);
+        }
+
 
     }
 }

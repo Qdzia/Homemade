@@ -15,6 +15,8 @@ namespace HomemadeApp.ViewModels
 {
     class FreeSearchViewModel : Screen
     {
+        public event EventHandler<int> OnRecepieClick;
+
         public TagBarViewModel TagBar { get; set; }
         public SearchBarViewModel SearchBar { get; set; }
 
@@ -71,8 +73,7 @@ namespace HomemadeApp.ViewModels
             SearchIngList.IngList = new BindableCollection<IngredientModel>();
             SearchIngList.IngList.AddRange(DataAccess.Instance.GetAllIng());
 
-
-            
+            SearchRecepieList.OnRecepieClickSR += RecepieClick;
 
         }
         public void ChangeLookingMode()
@@ -107,6 +108,10 @@ namespace HomemadeApp.ViewModels
           
         }
 
-        public string TestText { get; set; }
+        public void RecepieClick(object sender, int recId)
+        {
+            OnRecepieClick?.Invoke(this, recId);
+        }
+
     }
 }

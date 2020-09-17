@@ -10,16 +10,68 @@ namespace HomemadeApp.ViewModels
     class ShellViewModel : Conductor<object>
     {
         List<Screen> Screens { get; set; }
+
+        private FreeSearchViewModel _freeSearch;
+        private AddRecepieViewModel _addRecepie;
+        private PlannerViewModel _planner;
+
+        private Stack<Screen> _next;
+        private Stack<Screen> _previous;
+        private Screen currentScreen;
         public ShellViewModel()
         {
             ApiHelper.InitializeClient();
+            InitViews();
         }
 
-        public void GotoRecepie() => ActivateItem(new RecepieViewModel());
-        public void GotoFreeSearch() => ActivateItem(new FreeSearchViewModel());
-        public void GotoPlanner() => ActivateItem(new RecepieViewModel());
-        public void GotoPerformance() => ActivateItem(new AddRecepieViewModel());
+        private void InitViews()
+        {
+            _next = new Stack<Screen>();
+            _previous = new Stack<Screen>();
+
+            _freeSearch = new FreeSearchViewModel();
+            _addRecepie = new AddRecepieViewModel();
+            _planner = new PlannerViewModel();
+
+            currentScreen = _freeSearch;
+            ActivateItem(currentScreen);
+
+            _freeSearch.OnRecepieClick += GoToRecepie;
+        }
+
+        private void ChangeScreen(Screen view)
+        {
+            if (view == currentScreen) return;
+
+            _previous.Push(currentScreen);
+            currentScreen = view;
+            ActivateItem(currentScreen);
+        }
+        public void NextScreen()
+        {
+            if (_next.Count == 0) return;
+
+            _previous.Push(currentScreen);
+            currentScreen = _next.Pop();
+            ActivateItem(currentScreen);
+        }
+        public void PreviousScreen()
+        {
+            if (_previous.Count == 0) return;
+
+            _next.Push(currentScreen);
+            currentScreen = _previous.Pop();
+            ActivateItem(currentScreen);
+        }
+        //public void GotoRecepie() => ActivateItem(new RecepieViewModel());
+        public void GotoFreeSearch() => ChangeScreen(_freeSearch);
+        public void GotoPlanner() => ChangeScreen(_planner);
+        public void GotoPerformance() => ChangeScreen(_addRecepie);
         //For testing purposes name is diffrent
+        public void GoToRecepie(object sender, int recId)
+        {
+            ChangeScreen(new RecepieViewModel(recId));
+        }
 
     }
 }
