@@ -13,9 +13,7 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        
-        
-
+    
 
         <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
@@ -32,7 +30,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Add Your Favorite Recepie" FontSize="30" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Add Your Favorite Recepie" Grid.ColumnSpan="2"  Style="{StaticResource HeaderTextBlockStyle}"/>
             <Label Content="Name: " Grid.Row="1" Style="{StaticResource FormLabelStyle}"/>
             <Label Content="Preparation: " Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource FormLabelStyle}"/>
             <Label Content="Path to Photo: " Grid.Row="4" Style="{StaticResource FormLabelStyle}"/>

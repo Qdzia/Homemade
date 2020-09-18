@@ -83,6 +83,7 @@
     <Compile Include="AccessToData\DataAccess.cs" />
     <Compile Include="AccessToData\Helper.cs" />
     <Compile Include="Logic\ConverterStrItm.cs" />
+    <Compile Include="Logic\IngListHandler.cs" />
     <Compile Include="Models\DBModels\ContainModel.cs" />
     <Compile Include="Models\DBModels\IngredientModel.cs" />
     <Compile Include="Models\AppModels\InsertedIdModel.cs" />

@@ -44,6 +44,17 @@
         <Setter Property="FontSize" Value="12" />
     </Style>
 
+    <Style x:Key="BigTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontSize" Value="25" />
+    </Style>
+
     <Style x:Key="FormLabelStyle" TargetType="Label">
         <Setter Property="FontSize" Value="12" />
         <Setter Property="FontStyle" Value="Italic" />
