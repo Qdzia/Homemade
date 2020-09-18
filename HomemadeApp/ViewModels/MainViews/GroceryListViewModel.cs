@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using HomemadeApp.Logic;
 using HomemadeApp.Models;
 using System;
 using System.Collections.Generic;
@@ -8,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace HomemadeApp.ViewModels
 {
-    class RecepieViewModel : Screen
+    class GroceryListViewModel : Screen
     {
         public IngListViewModel RecepieIngList { get; set; }
-
-        public RecepieViewModel(int recId)
+        public GroceryListViewModel()
         {
-            Recepie = DataAccess.Instance.GetRecepieById(recId)[0];
             RecepieIngList = new IngListViewModel();
             RecepieIngList.IngList = new BindableCollection<IngListModel>();
-            RecepieIngList.IngList.AddRange(DataAccess.Instance.GetRecepieIngById(recId));
+
+            IngListHandler handler = new IngListHandler();
+
+            List<RecepieModel> recList = new List<RecepieModel>(DataAccess.Instance.GetAllRec());
+            RecepieIngList.IngList.AddRange(handler.SumUpIng(recList));
+
         }
-
-
-        public RecepieModel Recepie { get; set; }
 
     }
 }

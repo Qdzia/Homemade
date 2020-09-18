@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="200">
     <Grid>
-        <ListBox ItemsSource="{Binding IngList}" >
+        <ListBox ItemsSource="{Binding IngList}" Style="{StaticResource IngListStyle}">
             <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

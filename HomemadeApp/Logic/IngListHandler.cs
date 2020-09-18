@@ -15,7 +15,7 @@ namespace HomemadeApp.Logic
 
             foreach (var rec in recList)
             {
-                result = MergeIngList(result,DataAccess.Instance.GetRecepieIngById(rec.RecepieId));
+                result = MergeIngList(DataAccess.Instance.GetRecepieIngById(rec.RecepieId),result);
             }
 
             return result;
@@ -23,13 +23,20 @@ namespace HomemadeApp.Logic
 
         List<IngListModel> MergeIngList(List<IngListModel> first, List<IngListModel> second) 
         {
+
             for (int i = 0; i < first.Count; i++)
             {
-                foreach (var item in second)
+                for (int j = 0; j < second.Count; j++)
                 {
-                    if (item.IngId == first[i].IngId) first[i].Number += item.Number;
+                    if (second[j].IngName == first[i].IngName)
+                    {
+                        first[i].Number += second[j].Number;
+                        second.RemoveAt(j);
+                        break;
+                    }
                 }
             }
+            first.AddRange(second);
 
             return first;
         }

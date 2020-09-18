@@ -14,6 +14,7 @@ namespace HomemadeApp.ViewModels
         private FreeSearchViewModel _freeSearch;
         private AddRecepieViewModel _addRecepie;
         private PlannerViewModel _planner;
+        private GroceryListViewModel _groceryList;
 
         private Stack<Screen> _next;
         private Stack<Screen> _previous;
@@ -32,6 +33,7 @@ namespace HomemadeApp.ViewModels
             _freeSearch = new FreeSearchViewModel();
             _addRecepie = new AddRecepieViewModel();
             _planner = new PlannerViewModel();
+            _groceryList = new GroceryListViewModel();
 
             currentScreen = _freeSearch;
             ActivateItem(currentScreen);
@@ -46,6 +48,7 @@ namespace HomemadeApp.ViewModels
             _previous.Push(currentScreen);
             currentScreen = view;
             ActivateItem(currentScreen);
+            _next = new Stack<Screen>();
         }
         public void NextScreen()
         {
@@ -63,7 +66,7 @@ namespace HomemadeApp.ViewModels
             currentScreen = _previous.Pop();
             ActivateItem(currentScreen);
         }
-        //public void GotoRecepie() => ActivateItem(new RecepieViewModel());
+        public void GotoGroceryList() => ChangeScreen(_groceryList);
         public void GotoFreeSearch() => ChangeScreen(_freeSearch);
         public void GotoPlanner() => ChangeScreen(_planner);
         public void GotoPerformance() => ChangeScreen(_addRecepie);

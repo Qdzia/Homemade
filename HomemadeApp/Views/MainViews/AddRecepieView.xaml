@@ -63,7 +63,7 @@
             <Label Content="Ingredients: " Grid.Row="0" Style="{StaticResource FormLabelStyle}" />
             <Label Content="Paste Your List Here: " Grid.Row="2" Style="{StaticResource FormLabelStyle}"/>
             
-            <ContentControl x:Name="RecepieIngList" Grid.Row="1" Margin="10"/>
+            <ContentControl x:Name="RecepieIngList" Grid.Row="1"/>
 
             <TextBox x:Name="AddIngText" Grid.Row="3" Style="{StaticResource FormBigTextBoxStyle}"/>
 
