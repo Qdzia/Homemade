@@ -12,12 +12,17 @@ namespace HomemadeApp.ViewModels
     {
         public IngListViewModel RecepieIngList { get; set; }
 
+        public NutrientsLabelViewModel NutrientsLabel { get; set; }
+
         public RecepieViewModel(int recId)
         {
             Recepie = DataAccess.Instance.GetRecepieById(recId)[0];
             RecepieIngList = new IngListViewModel();
             RecepieIngList.IngList = new BindableCollection<IngListModel>();
             RecepieIngList.IngList.AddRange(DataAccess.Instance.GetRecepieIngById(recId));
+
+            NutrientsLabel = new NutrientsLabelViewModel();
+            NutrientsLabel.Nutrients = new IngredientModel(1,"xd",1,2345,23,34,45,56,67,78,89,7);
         }
 
 

@@ -23,7 +23,6 @@ namespace HomemadeApp.Logic
 
         List<IngListModel> MergeIngList(List<IngListModel> first, List<IngListModel> second) 
         {
-
             for (int i = 0; i < first.Count; i++)
             {
                 for (int j = 0; j < second.Count; j++)

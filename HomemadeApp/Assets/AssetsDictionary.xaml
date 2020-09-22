@@ -55,6 +55,19 @@
         <Setter Property="FontSize" Value="25" />
     </Style>
 
+    <Style x:Key="CentredNumberTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="NutrientsLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontStyle" Value="Italic" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+
     <Style x:Key="FormLabelStyle" TargetType="Label">
         <Setter Property="FontSize" Value="12" />
         <Setter Property="FontStyle" Value="Italic" />

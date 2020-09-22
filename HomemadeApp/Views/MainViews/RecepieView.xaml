@@ -30,7 +30,8 @@
 
             <TextBlock Grid.Row="0" Text="{Binding Recepie.RecepieName}" Style="{StaticResource HeaderTextBlockStyle}"/>
             <MediaElement Grid.Row="2" Margin="12" Source="{Binding Recepie.Video}"/>
-            
+            <ContentControl x:Name="NutrientsLabel" Grid.Column="0" Grid.Row="3"/>
+
         </Grid>
 
         <Grid Grid.Column="1">

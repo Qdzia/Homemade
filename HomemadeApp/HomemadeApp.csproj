@@ -82,6 +82,7 @@
     <Compile Include="AccessToData\ApiHelper.cs" />
     <Compile Include="AccessToData\DataAccess.cs" />
     <Compile Include="AccessToData\Helper.cs" />
+    <Compile Include="Logic\NutrientsCounter.cs" />
     <Compile Include="Logic\ConverterStrItm.cs" />
     <Compile Include="Logic\IngListHandler.cs" />
     <Compile Include="Models\DBModels\ContainModel.cs" />
@@ -101,6 +102,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\MainViews\GroceryListViewModel.cs" />
+    <Compile Include="ViewModels\Controls\NutrientsLabelViewModel.cs" />
     <Compile Include="ViewModels\TimeEditViewModel.cs" />
     <Compile Include="ViewModels\SubViews\AddIngredientViewModel.cs" />
     <Compile Include="ViewModels\Controls\IngListViewModel.cs" />
@@ -115,6 +117,9 @@
     <Compile Include="ViewModels\Controls\TagBarViewModel.cs" />
     <Compile Include="Views\MainViews\GroceryListView.xaml.cs">
       <DependentUpon>GroceryListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\NutrientsLabelView.xaml.cs">
+      <DependentUpon>NutrientsLabelView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SubViews\AddIngredientView.xaml.cs">
       <DependentUpon>AddIngredientView.xaml</DependentUpon>
@@ -188,6 +193,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainViews\GroceryListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\NutrientsLabelView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
