@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using HomemadeApp.Models;
+using HomemadeApp.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,10 @@ namespace HomemadeApp.ViewModels
             RecepieIngList.IngList = new BindableCollection<IngListModel>();
             RecepieIngList.IngList.AddRange(DataAccess.Instance.GetRecepieIngById(recId));
 
+            NutrientsCounter nutrientsCounter = new NutrientsCounter();
             NutrientsLabel = new NutrientsLabelViewModel();
-            NutrientsLabel.Nutrients = new IngredientModel(1,"xd",1,2345,23,34,45,56,67,78,89,7);
+            NutrientsLabel.Nutrients = nutrientsCounter.CountRecepieNutrients(RecepieIngList.IngList.ToList());
+            //NutrientsLabel.Nutrients = new IngredientModel(1,"xd",1,2345,23,34,45,56,67,78,89,7);
         }
 
 

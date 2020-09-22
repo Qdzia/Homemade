@@ -93,7 +93,7 @@ namespace HomemadeApp.Logic
 
             if (m.Success)
             {
-                unit = m.Groups[1].ToString().Trim();
+                unit = m.Groups[1].ToString().Trim().ToLower();
                 strItem = m.Groups[2].ToString().Trim();
             }
             return unit;

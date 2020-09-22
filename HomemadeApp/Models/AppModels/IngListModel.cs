@@ -14,8 +14,9 @@ namespace HomemadeApp.Models
         public string Unit { get; set; }
         public string Notes { get; set; }
 
-        public IngListModel(string ingName, decimal number, string unit, string notes)
+        public IngListModel(int ingId, string ingName, decimal number, string unit, string notes)
         {
+            IngId = ingId;
             IngName = ingName;
             Number = number;
             Unit = unit;
