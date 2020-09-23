@@ -27,7 +27,7 @@ namespace HomemadeApp.Logic
             {
                 for (int j = 0; j < second.Count; j++)
                 {
-                    if (second[j].IngName == first[i].IngName)
+                    if (second[j].IngName == first[i].IngName)//unit recognition
                     {
                         first[i].Number += second[j].Number;
                         second.RemoveAt(j);

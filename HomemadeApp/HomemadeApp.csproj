@@ -101,6 +101,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\MainViews\DayPlannerViewModel.cs" />
     <Compile Include="ViewModels\MainViews\GroceryListViewModel.cs" />
     <Compile Include="ViewModels\Controls\NutrientsLabelViewModel.cs" />
     <Compile Include="ViewModels\TimeEditViewModel.cs" />
@@ -115,6 +116,9 @@
     <Compile Include="ViewModels\Controls\SearchBarViewModel.cs" />
     <Compile Include="ViewModels\MainViews\ShellViewModel.cs" />
     <Compile Include="ViewModels\Controls\TagBarViewModel.cs" />
+    <Compile Include="Views\DayPlannerView.xaml.cs">
+      <DependentUpon>DayPlannerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainViews\GroceryListView.xaml.cs">
       <DependentUpon>GroceryListView.xaml</DependentUpon>
     </Compile>
@@ -189,6 +193,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Assets\AssetsDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DayPlannerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,7 +24,7 @@ namespace HomemadeApp.ViewModels
 
             NutrientsCounter nutrientsCounter = new NutrientsCounter();
             NutrientsLabel = new NutrientsLabelViewModel();
-            NutrientsLabel.Nutrients = nutrientsCounter.CountRecepieNutrients(RecepieIngList.IngList.ToList());
+            NutrientsLabel.Nutrients = nutrientsCounter.CountListNutrients(RecepieIngList.IngList.ToList());
             //NutrientsLabel.Nutrients = new IngredientModel(1,"xd",1,2345,23,34,45,56,67,78,89,7);
         }
 

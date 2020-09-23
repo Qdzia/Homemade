@@ -11,7 +11,7 @@
         <ItemsControl Grid.Row="2" ItemsSource="{Binding RecepieList,Mode=TwoWay}" Margin="20" >
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1" Padding="5" Margin="10" cal:Message.Attach="[Event MouseDown]=[Action RecepieClick($dataContext)]">
+                    <Border BorderBrush="Black" BorderThickness="1" Padding="5" Margin="10" cal:Message.Attach="[Event MouseDown]=[Action RecepieClick($dataContext,$source)]">
 
                         <Grid>
                             <Grid.ColumnDefinitions>

@@ -9,7 +9,7 @@ namespace HomemadeApp.Logic
 {
     class NutrientsCounter
     {
-        public IngredientModel CountRecepieNutrients(List<IngListModel> ingList)
+        public IngredientModel CountListNutrients(List<IngListModel> ingList)
         {
             var output = new IngredientModel();
             var allIng = DataAccess.Instance.GetAllIng();
@@ -24,7 +24,6 @@ namespace HomemadeApp.Logic
                         output = AddNutrients(output, ingDB, amount);
                     }
                 }
-                
             }
 
             return output;
