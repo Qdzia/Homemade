@@ -13,6 +13,7 @@ namespace HomemadeApp.ViewModels
     class SearchRecepieListViewModel : Screen
     {
         public event EventHandler<int> OnRecepieClickSR;
+        public event EventHandler OnRecepieSelectSR;
 
         public BindableCollection<RecepieModel> RecepieList { get; set; }
 
@@ -23,6 +24,8 @@ namespace HomemadeApp.ViewModels
         public SearchRecepieListViewModel()
         {
             _previousBorder = new Border();
+            RecepieList = new BindableCollection<RecepieModel>();
+            SelectedRecepie = new RecepieModel();
         }
         public void UpdateList(List<string> tags)
         {
@@ -37,11 +40,17 @@ namespace HomemadeApp.ViewModels
             _previousBorder.BorderBrush = Brushes.Black;
             _previousBorder = border;
             border.BorderBrush = Brushes.Blue;
-
+            
             if (SelectedRecepie == rec) 
                 OnRecepieClickSR?.Invoke(this, rec.RecepieId);
 
             SelectedRecepie = rec;
+            OnRecepieSelectSR?.Invoke(this, null);
+        }
+
+        public void ClearSelectedRecepie()
+        {
+            RecepieClick(new RecepieModel(), new Border());
         }
 
 

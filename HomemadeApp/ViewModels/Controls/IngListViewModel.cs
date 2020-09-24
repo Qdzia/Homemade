@@ -12,5 +12,10 @@ namespace HomemadeApp.ViewModels
     {
         public BindableCollection<IngListModel> IngList { get; set; }
 
+        public IngListViewModel()
+        {
+            IngList = new BindableCollection<IngListModel>();
+        }
+
     }
 }

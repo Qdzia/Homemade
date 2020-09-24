@@ -41,6 +41,7 @@ namespace HomemadeApp.ViewModels
             ActivateItem(currentScreen);
 
             _freeSearch.OnRecepieClick += GoToRecepie;
+            _dayPlanner.OnRecepieClick += GoToRecepie;
         }
 
         private void ChangeScreen(Screen view)

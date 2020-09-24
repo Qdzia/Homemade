@@ -11,5 +11,10 @@ namespace HomemadeApp.ViewModels
     class SearchIngListViewModel : Screen
     {
         public BindableCollection<IngredientModel> IngList { get; set; }
+
+        public SearchIngListViewModel()
+        {
+            IngList = new BindableCollection<IngredientModel>();
+        }
     }
 }

@@ -11,5 +11,10 @@ namespace HomemadeApp.ViewModels
     class NutrientsLabelViewModel : Screen
     {
         public IngredientModel Nutrients { get; set; }
+
+        public NutrientsLabelViewModel()
+        {
+            Nutrients = new IngredientModel();
+        }
     }
 }

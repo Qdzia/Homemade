@@ -47,22 +47,22 @@
             <!--Servings Panel-->
             <StackPanel  Grid.Column="4" Margin="5" Orientation="Horizontal">
                 <TextBlock Text="Servings: " VerticalAlignment="Center"/>
-                <Button x:Name="ServingsPlus" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
+                <Button x:Name="ServingsMinus" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
                     <Image Margin="5" Source="{StaticResource ArrowLeftIcon}"/>
                 </Button>
-                <TextBlock Text="1" VerticalAlignment="Center"/>
-                <Button x:Name="ServingsMinus" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
+                <TextBlock Text="{Binding Servings}" VerticalAlignment="Center"/>
+                <Button x:Name="ServingsPlus" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
                     <Image Margin="5" Source="{StaticResource ArrowRightIcon}"/>
                 </Button>
             </StackPanel>
 
             <!--Date Panel-->
             <StackPanel  Grid.Column="5" Margin="5" Orientation="Horizontal">
-                <Button x:Name="PreviousScreen" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
+                <Button x:Name="PreviousWeek" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
                     <Image Margin="5" Source="{StaticResource ArrowLeftIcon}"/>
                 </Button>
-                <TextBlock Text="1-7.09.20" VerticalAlignment="Center"/>
-                <Button x:Name="NextScreen" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
+                <TextBlock Text="{Binding WeekName}" VerticalAlignment="Center"/>
+                <Button x:Name="NextWeek" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
                     <Image Margin="5" Source="{StaticResource ArrowRightIcon}"/>
                 </Button>
             </StackPanel>

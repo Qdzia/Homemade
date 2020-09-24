@@ -34,6 +34,7 @@ namespace HomemadeApp.Models
             Rating = rating;
         }
 
+        public RecepieModel(){}
       
 
     }
