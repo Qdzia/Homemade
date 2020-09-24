@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F4C03CF-82E8-4C45-A4A7-52A569375CF1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HomemadeApp</RootNamespace>
+    <AssemblyName>HomemadeApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AccessToData\FoodDataCentralProcessor.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="AccessToData\ApiHelper.cs" />
+    <Compile Include="AccessToData\DataAccess.cs" />
+    <Compile Include="AccessToData\Helper.cs" />
+    <Compile Include="Logic\NutrientsCounter.cs" />
+    <Compile Include="Logic\ConverterStrItm.cs" />
+    <Compile Include="Logic\IngListHandler.cs" />
+    <Compile Include="Models\DBModels\ContainModel.cs" />
+    <Compile Include="Models\DBModels\IngredientModel.cs" />
+    <Compile Include="Models\AppModels\InsertedIdModel.cs" />
+    <Compile Include="Models\AppModels\IngListModel.cs" />
+    <Compile Include="Models\DBModels\RecepieModel.cs" />
+    <Compile Include="Models\AppModels\TagBoxModel.cs" />
+    <Compile Include="Models\DBModels\TagModel.cs" />
+    <Compile Include="Models\UsdaModels\UsdaSearchFoodModel.cs" />
+    <Compile Include="Models\UsdaModels\UsdaSearchModel.cs" />
+    <Compile Include="Models\UsdaModels\UsdaSearchFoodNutrientModel.cs" />
+    <Compile Include="RecepieSample.cs" />
+    <Compile Include="UnitTesting.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\MainViews\DayPlannerViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\GroceryListViewModel.cs" />
+    <Compile Include="ViewModels\Controls\NutrientsLabelViewModel.cs" />
+    <Compile Include="ViewModels\TimeEditViewModel.cs" />
+    <Compile Include="ViewModels\SubViews\AddIngredientViewModel.cs" />
+    <Compile Include="ViewModels\Controls\IngListViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\AddRecepieViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\FreeSearchViewModel.cs" />
+    <Compile Include="ViewModels\SubViews\SearchIngListViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\PlannerViewModel.cs" />
+    <Compile Include="ViewModels\SubViews\SearchRecepieListViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\RecepieViewModel.cs" />
+    <Compile Include="ViewModels\Controls\SearchBarViewModel.cs" />
+    <Compile Include="ViewModels\MainViews\ShellViewModel.cs" />
+    <Compile Include="ViewModels\Controls\TagBarViewModel.cs" />
+    <Compile Include="Views\DayPlannerView.xaml.cs">
+      <DependentUpon>DayPlannerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\GroceryListView.xaml.cs">
+      <DependentUpon>GroceryListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\NutrientsLabelView.xaml.cs">
+      <DependentUpon>NutrientsLabelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\AddIngredientView.xaml.cs">
+      <DependentUpon>AddIngredientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\IngListView.xaml.cs">
+      <DependentUpon>IngListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\AddRecepieView.xaml.cs">
+      <DependentUpon>AddRecepieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\FreeSearchView.xaml.cs">
+      <DependentUpon>FreeSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\PlannerView.xaml.cs">
+      <DependentUpon>PlannerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\RecepieView.xaml.cs">
+      <DependentUpon>RecepieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\SearchBarView.xaml.cs">
+      <DependentUpon>SearchBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\SearchIngListView.xaml.cs">
+      <DependentUpon>SearchIngListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\SearchRecepieListView.xaml.cs">
+      <DependentUpon>SearchRecepieListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\TagBarView.xaml.cs">
+      <DependentUpon>TagBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeEditView.xaml.cs">
+      <DependentUpon>TimeEditView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="AccessToData\FDC_List.json" />
+    <None Include="AccessToData\FDC_Search.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Assets\AssetsDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DayPlannerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViews\GroceryListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\NutrientsLabelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubViews\AddIngredientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\IngListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViews\AddRecepieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViews\FreeSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViews\PlannerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViews\RecepieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\SearchBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubViews\SearchIngListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubViews\SearchRecepieListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViews\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\TagBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\CloseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\SearchBarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\SearchIngIcon.png" />
+    <Resource Include="Assets\Icons\SearchRecepieIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\AddRecepieIcon.png" />
+    <Resource Include="Assets\Icons\HomePageIcon.png" />
+    <Resource Include="Assets\Icons\MenuIcon.png" />
+    <Resource Include="Assets\Icons\PerformanceIcon.png" />
+    <Resource Include="Assets\Icons\PlannerIcon.png" />
+    <Resource Include="Assets\Icons\UserAccountIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\GroceryListIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\AddToFavoriteIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\ArrowLeftIcon.png" />
+    <Resource Include="Assets\Icons\ArrowRightIcon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Tags]
+(
+	[TagId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Tag] NVARCHAR(20) NOT NULL, 
+    [TagColor] NCHAR(9) NULL
+)

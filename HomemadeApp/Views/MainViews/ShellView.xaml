@@ -1,0 +1,64 @@
+﻿<Window x:Class="HomemadeApp.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomemadeApp.Views"
+        mc:Ignorable="d"
+        Title="ShellView" Height="800" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="5" Orientation="Horizontal">
+            <Button x:Name="PreviousScreen" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
+                <Image Margin="5" Source="{StaticResource ArrowLeftIcon}"/>
+            </Button>
+            <Button x:Name="NextScreen" Style="{StaticResource MenuButtonStyle}" MaxHeight="25">
+                <Image Margin="5" Source="{StaticResource ArrowRightIcon}"/>
+            </Button>
+        </StackPanel>
+        
+
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" MinWidth="40" MaxWidth="45" Margin="5" >
+            <Button x:Name="GotoMenu" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource MenuIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoHomePage" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource HomePageIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoPlanner" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource PlannerIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoGroceryList" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource GroceryListIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoFreeSearch" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource SearchBarIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoUserAccount" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource UserAccountIcon}"/>
+            </Button>
+
+            <Button x:Name="GotoPerformance" Style="{StaticResource MenuButtonStyle}">
+                <Image Margin="5" Source="{StaticResource PerformanceIcon}"/>
+            </Button>
+            
+        </StackPanel>
+
+        <ContentControl Grid.Row="1" Grid.Column="1" x:Name="ActiveItem"/>
+
+    </Grid>
+</Window>

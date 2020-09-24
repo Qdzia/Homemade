@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="HomemadeApp.Views.TimeEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HomemadeApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200">
+
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+            
+        <Viewbox Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Height="Auto">
+            <TextBox Text="{Binding Heures,Mode=TwoWay}" />
+        </Viewbox>
+
+        <Viewbox Grid.Column="1"  Margin="4" VerticalAlignment="Stretch" Height="Auto">
+            <TextBlock VerticalAlignment="Center" Text=":" />
+        </Viewbox>
+
+        <Viewbox Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Left" Height="Auto">
+            <TextBox Text="{Binding Minutes,Mode=TwoWay}" />
+        </Viewbox>
+    </Grid>
+
+  
+
+
+</UserControl>
