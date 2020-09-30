@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="HomemadeApp.Views.DayPlanListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HomemadeApp.Views"
+             mc:Ignorable="d" Background="White"
+             xmlns:cal="http://www.caliburnproject.org"
+             d:DesignHeight="450" d:DesignWidth="180">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Day Info Bar-->
+        <Border Grid.Row="0" Background="ForestGreen">
+            <TextBlock  Foreground="White" FontSize="20" Text="{Binding DayName}" HorizontalAlignment="Center"/>
+        </Border>
+        <Border Grid.Row="1" Background="ForestGreen">
+            <TextBlock  Foreground="White" FontSize="10" Text="{Binding DateFormat}" HorizontalAlignment="Center"/>
+        </Border>
+        
+        <!--Meal List-->
+        <ItemsControl Grid.Row="2" ItemsSource="{Binding MealsOfDay}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="5" Margin="10" cal:Message.Attach="[Event MouseDown]=[Action RecepieClick($dataContext)]">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{Binding NumberOfMeal}" Grid.RowSpan="2" Foreground="LightGray" FontSize="20" Margin="0,0,10,0"/>
+
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                <TextBlock Text="{Binding RecepieName}" FontSize="20"/>
+
+                                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                    <Label  FontSize="12" Content="servings: "/>
+                                    <TextBlock  FontSize="12" Text="{Binding Servings}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                
+                            </Grid>
+                            
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        
+        
+    </Grid>
+</UserControl>

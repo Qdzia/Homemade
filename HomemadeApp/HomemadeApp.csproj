@@ -85,6 +85,7 @@
     <Compile Include="Logic\NutrientsCounter.cs" />
     <Compile Include="Logic\ConverterStrItm.cs" />
     <Compile Include="Logic\IngListHandler.cs" />
+    <Compile Include="Models\AppModels\RestrictionNameModel.cs" />
     <Compile Include="Models\DBModels\ContainModel.cs" />
     <Compile Include="Models\DBModels\IngredientModel.cs" />
     <Compile Include="Models\AppModels\InsertedIdModel.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Models\DBModels\RecepieModel.cs" />
     <Compile Include="Models\AppModels\TagBoxModel.cs" />
     <Compile Include="Models\DBModels\TagModel.cs" />
+    <Compile Include="Models\MealModel.cs" />
     <Compile Include="Models\UsdaModels\UsdaSearchFoodModel.cs" />
     <Compile Include="Models\UsdaModels\UsdaSearchModel.cs" />
     <Compile Include="Models\UsdaModels\UsdaSearchFoodNutrientModel.cs" />
@@ -101,10 +103,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\SubViews\DayPlanListViewModel.cs" />
     <Compile Include="ViewModels\MainViews\DayPlannerViewModel.cs" />
     <Compile Include="ViewModels\MainViews\GroceryListViewModel.cs" />
     <Compile Include="ViewModels\Controls\NutrientsLabelViewModel.cs" />
-    <Compile Include="ViewModels\TimeEditViewModel.cs" />
+    <Compile Include="ViewModels\Controls\TimeEditViewModel.cs" />
     <Compile Include="ViewModels\SubViews\AddIngredientViewModel.cs" />
     <Compile Include="ViewModels\Controls\IngListViewModel.cs" />
     <Compile Include="ViewModels\MainViews\AddRecepieViewModel.cs" />
@@ -116,7 +119,10 @@
     <Compile Include="ViewModels\Controls\SearchBarViewModel.cs" />
     <Compile Include="ViewModels\MainViews\ShellViewModel.cs" />
     <Compile Include="ViewModels\Controls\TagBarViewModel.cs" />
-    <Compile Include="Views\DayPlannerView.xaml.cs">
+    <Compile Include="Views\SubViews\DayPlanListView.xaml.cs">
+      <DependentUpon>DayPlanListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViews\DayPlannerView.xaml.cs">
       <DependentUpon>DayPlannerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainViews\GroceryListView.xaml.cs">
@@ -158,7 +164,7 @@
     <Compile Include="Views\Controls\TagBarView.xaml.cs">
       <DependentUpon>TagBarView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TimeEditView.xaml.cs">
+    <Compile Include="Views\Controls\TimeEditView.xaml.cs">
       <DependentUpon>TimeEditView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -196,7 +202,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\DayPlannerView.xaml">
+    <Page Include="Views\SubViews\DayPlanListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViews\DayPlannerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -252,7 +262,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TimeEditView.xaml">
+    <Page Include="Views\Controls\TimeEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

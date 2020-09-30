@@ -32,6 +32,7 @@ namespace HomemadeApp
         }
         #endregion
 
+        #region Get Data 
         public List<RecepieModel> GetRecepieById(int recepieId)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB"))) 
@@ -46,6 +47,15 @@ namespace HomemadeApp
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
             {
                 var output = connection.Query<IngListModel>($"spContain_GetRecepieIngById @RecepieId", new { RecepieId = recepieId }).ToList();
+                return output;
+            }
+        }
+
+        public List<RestrictionNameModel> GetRestrictionsByUserId(int userId)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                var output = connection.Query<RestrictionNameModel>($"spRestrictions_GetFromUser @UserId", new { UserId = userId }).ToList();
                 return output;
             }
         }
@@ -84,6 +94,17 @@ namespace HomemadeApp
             }
         }
 
+        public List<MealModel> GetMealsOfDay(DateTime day)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                var output = connection.Query<MealModel>($"spMeals_GetMealsOfDay @Day", new { Day = day }).ToList();
+                return output;
+            }
+        }
+        #endregion
+
+        #region Search Options
         public List<RecepieModel> FiltrRecepieByTags(List<string> tags)
         {
             if (tags.Count == 0) return GetAllRec();
@@ -101,8 +122,6 @@ namespace HomemadeApp
             }
 
         }
-
-       
         public List<RecepieModel> FiltrRecepieByName(string name)
         {
             name = "%" + name.Trim() + "%";
@@ -112,7 +131,9 @@ namespace HomemadeApp
                 return output;
             }
         }
+        #endregion
 
+        #region Inserts
         public int InsertRecepie(RecepieModel rec)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
@@ -146,5 +167,6 @@ namespace HomemadeApp
                 connection.Execute("spIngredients_Insert @IngName, @Category, @Calories, @Fat, @Carbs, @Fiber, @Sugar, @Protein, @Sodium, @TransFat, @Cholesterol", ingList);
             }
         }
+        #endregion
     }
 }
