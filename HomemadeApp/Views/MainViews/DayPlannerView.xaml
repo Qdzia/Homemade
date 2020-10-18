@@ -40,8 +40,8 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="{Binding MealName}" FontSize="20"/>
-                <TextBlock Grid.Row="1" Text="{Binding RecepieName}" />
+                <TextBlock Text="{Binding MealName}" />
+                <TextBlock Grid.Row="1" Text="{Binding RecepieName}" FontSize="20"/>
             </Grid>
 
             <!--Servings Panel-->

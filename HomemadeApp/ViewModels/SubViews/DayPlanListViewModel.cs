@@ -14,8 +14,11 @@ namespace HomemadeApp.ViewModels
         public event EventHandler<int> OnRecepieClickDP;
         public string DayName { get; set; }
         public string DateFormat { get; set; }
+
+        private DateTime _date;
         public DayPlanListViewModel(DateTime date)
         {
+            _date = date;
             MealsOfDay = new BindableCollection<MealModel>();
             MealsOfDay.AddRange(DataAccess.Instance.GetMealsOfDay(date));
             DayName = date.DayOfWeek.ToString();
@@ -26,6 +29,10 @@ namespace HomemadeApp.ViewModels
         {
             OnRecepieClickDP?.Invoke(this, meal.RecepieId);
         }
-
+        protected override void OnActivate()
+        {
+            MealsOfDay = new BindableCollection<MealModel>();
+            MealsOfDay.AddRange(DataAccess.Instance.GetMealsOfDay(_date));
+        }
     }
 }

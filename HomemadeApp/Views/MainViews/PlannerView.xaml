@@ -16,26 +16,54 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Planner Review" Style="{StaticResource HeaderTextBlockStyle}" Grid.ColumnSpan="2"/>
-        
+
         <ItemsControl Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Path=Items}" >
-            
+
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
-            
+
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <ContentControl cal:View.Model="{Binding}"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-            <!--<ContentControl Grid.Column="1" x:Name="DayPlanList" />-->
+
+        <ItemsControl Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Restrictions}" >
+
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="15,0,15,10">
+                        <TextBlock FontSize="35" TextAlignment="Center" Text="{Binding Max}"/>
+                        
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock FontSize="9" TextAlignment="Center" Text="Max: "/>
+                            <TextBlock FontSize="9" TextAlignment="Center" Text="{Binding Max}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock FontSize="9" TextAlignment="Center" Text="Min: "/>
+                            <TextBlock FontSize="9" TextAlignment="Center" Text="{Binding Min}"/>
+                        </StackPanel>
+                        
+                        <TextBlock FontSize="20" TextAlignment="Center" Text="{Binding Tag}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
     </Grid>
 </UserControl>

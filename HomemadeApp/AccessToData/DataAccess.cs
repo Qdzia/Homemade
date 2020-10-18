@@ -167,6 +167,19 @@ namespace HomemadeApp
                 connection.Execute("spIngredients_Insert @IngName, @Category, @Calories, @Fat, @Carbs, @Fiber, @Sugar, @Protein, @Sodium, @TransFat, @Cholesterol", ingList);
             }
         }
+
+        public void InsertMeal(List<MealModel> meals)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                foreach (var meal in meals)
+                {
+                    connection.Execute("spMeals_Insert @MealId, @RecepieId, @UserId, @ExpectedDate, @NumberOfMeal, @Servings, @Notes", meal);
+                }
+                
+
+            }
+        }
         #endregion
     }
 }
