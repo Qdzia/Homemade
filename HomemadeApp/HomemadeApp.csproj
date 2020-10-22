@@ -86,7 +86,7 @@
     <Compile Include="Logic\ConverterStrItm.cs" />
     <Compile Include="Logic\IngListHandler.cs" />
     <Compile Include="Logic\WeekMeals.cs" />
-    <Compile Include="Models\AppModels\RestrictionNameModel.cs" />
+    <Compile Include="Models\DBModels\RestrictionsModel.cs" />
     <Compile Include="Models\DBModels\ContainModel.cs" />
     <Compile Include="Models\DBModels\IngredientModel.cs" />
     <Compile Include="Models\AppModels\InsertedIdModel.cs" />
@@ -96,6 +96,7 @@
     <Compile Include="Models\AppModels\TagBoxModel.cs" />
     <Compile Include="Models\DBModels\TagModel.cs" />
     <Compile Include="Models\DBModels\MealModel.cs" />
+    <Compile Include="Models\DBModels\UserModel.cs" />
     <Compile Include="Models\UsdaModels\UsdaSearchFoodModel.cs" />
     <Compile Include="Models\UsdaModels\UsdaSearchModel.cs" />
     <Compile Include="Models\UsdaModels\UsdaSearchFoodNutrientModel.cs" />
@@ -106,6 +107,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\MainViews\AccountViewModel.cs" />
     <Compile Include="ViewModels\SubViews\DayPlanListViewModel.cs" />
     <Compile Include="ViewModels\MainViews\DayPlannerViewModel.cs" />
     <Compile Include="ViewModels\MainViews\GroceryListViewModel.cs" />
@@ -115,6 +117,7 @@
     <Compile Include="ViewModels\Controls\IngListViewModel.cs" />
     <Compile Include="ViewModels\MainViews\AddRecepieViewModel.cs" />
     <Compile Include="ViewModels\MainViews\FreeSearchViewModel.cs" />
+    <Compile Include="ViewModels\SubViews\RestrictionsPanelViewModel.cs" />
     <Compile Include="ViewModels\SubViews\SearchIngListViewModel.cs" />
     <Compile Include="ViewModels\MainViews\PlannerViewModel.cs" />
     <Compile Include="ViewModels\SubViews\SearchRecepieListViewModel.cs" />
@@ -122,6 +125,12 @@
     <Compile Include="ViewModels\Controls\SearchBarViewModel.cs" />
     <Compile Include="ViewModels\MainViews\ShellViewModel.cs" />
     <Compile Include="ViewModels\Controls\TagBarViewModel.cs" />
+    <Compile Include="Views\MainViews\AccountView.xaml.cs">
+      <DependentUpon>AccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\RestrictionsPanelView.xaml.cs">
+      <DependentUpon>RestrictionsPanelView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SubViews\DayPlanListView.xaml.cs">
       <DependentUpon>DayPlanListView.xaml</DependentUpon>
     </Compile>
@@ -202,6 +211,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Assets\AssetsDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViews\AccountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubViews\RestrictionsPanelView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

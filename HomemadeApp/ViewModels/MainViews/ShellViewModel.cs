@@ -16,6 +16,7 @@ namespace HomemadeApp.ViewModels
         private PlannerViewModel _planner;
         private GroceryListViewModel _groceryList;
         private DayPlannerViewModel _dayPlanner;
+        private AccountViewModel _account;
 
         private Stack<Screen> _next;
         private Stack<Screen> _previous;
@@ -36,6 +37,7 @@ namespace HomemadeApp.ViewModels
             _planner = new PlannerViewModel();
             _groceryList = new GroceryListViewModel();
             _dayPlanner = new DayPlannerViewModel();
+            _account = new AccountViewModel();
 
             currentScreen = _planner;
             ActivateItem(currentScreen);
@@ -74,9 +76,11 @@ namespace HomemadeApp.ViewModels
         public void GotoFreeSearch() => ChangeScreen(_freeSearch);
         public void GotoPerformance() => ChangeScreen(_addRecepie);
         //For testing purposes name is diffrent
-        public void GotoUserAccount() => ChangeScreen(_dayPlanner);
+        public void GotoUserAccount() => ChangeScreen(_account);
         public void GotoPlanner() => ChangeScreen(_planner);
-       
+        public void GotoMenu() => ChangeScreen(_dayPlanner);
+
+
         public void GoToRecepie(object sender, int recId)
         {
             ChangeScreen(new RecepieViewModel(recId));

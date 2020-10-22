@@ -2,7 +2,6 @@
 	@UserId int 
 AS
 Begin
-	SELECT t.Tag,r.Max,r.Min FROM Restrictions r
-	JOIN Tags t ON t.TagId = r.TagId
+	SELECT ResId,MaxNum,MinNum FROM Restrictions
 	WHERE UserId = @UserId;
 End

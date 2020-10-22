@@ -33,7 +33,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Category: " Grid.Column="0" Style="{StaticResource FormLabelStyle}" />
-            <ComboBox  Grid.Column="1" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Style="{StaticResource FormComboBoxStyle}"/>
+            <ComboBox  Grid.Column="1" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}"  Style="{StaticResource FormComboBoxStyle}"/>
         </Grid>
         
         <ScrollViewer Grid.Row="6" >

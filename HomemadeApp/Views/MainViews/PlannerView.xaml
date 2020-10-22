@@ -48,18 +48,18 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="15,0,15,10">
-                        <TextBlock FontSize="35" TextAlignment="Center" Text="{Binding Max}"/>
+                        <TextBlock FontSize="35" TextAlignment="Center" Text="{Binding MaxNum}"/>
                         
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock FontSize="9" TextAlignment="Center" Text="Max: "/>
-                            <TextBlock FontSize="9" TextAlignment="Center" Text="{Binding Max}"/>
+                            <TextBlock FontSize="9" TextAlignment="Center" Text="{Binding MaxNum}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock FontSize="9" TextAlignment="Center" Text="Min: "/>
-                            <TextBlock FontSize="9" TextAlignment="Center" Text="{Binding Min}"/>
+                            <TextBlock FontSize="9" TextAlignment="Center" Text="{Binding MinNum}"/>
                         </StackPanel>
-                        
-                        <TextBlock FontSize="20" TextAlignment="Center" Text="{Binding Tag}"/>
+
+                        <TextBlock FontSize="20" TextAlignment="Center" Text="{Binding ResName}"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

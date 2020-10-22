@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using HomemadeApp.Models;
+using HomemadeApp.Models.DBModels;
 
 namespace HomemadeApp
 {
@@ -32,6 +33,16 @@ namespace HomemadeApp
         }
         #endregion
 
+        public string[] Categories { get;} = { "Dark-Green Vegetables",
+            "Red & Orange Vegetables", "Legumes(Beans & Peas)",
+            "Starchy Vegetables", "Other Vegetables", "Protein Foods",
+            "Grains", "Fruits", "Dairy", "Oils", "Others" };
+
+        public string[] Restrictions { get; } = { "Dark-Green Vegetables",
+            "Red & Orange Vegetables", "Legumes(Beans & Peas)",
+            "Starchy Vegetables", "Other Vegetables", "Protein Foods",
+            "Grains", "Fruits", "Dairy", "Oils", "Others" };
+
         #region Get Data 
         public List<RecepieModel> GetRecepieById(int recepieId)
         {
@@ -51,11 +62,11 @@ namespace HomemadeApp
             }
         }
 
-        public List<RestrictionNameModel> GetRestrictionsByUserId(int userId)
+        public List<RestrictionsModel> GetRestrictionsByUserId(int userId)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
             {
-                var output = connection.Query<RestrictionNameModel>($"spRestrictions_GetFromUser @UserId", new { UserId = userId }).ToList();
+                var output = connection.Query<RestrictionsModel>($"spRestrictions_GetFromUser @UserId", new { UserId = userId }).ToList();
                 return output;
             }
         }
@@ -102,6 +113,16 @@ namespace HomemadeApp
                 return output;
             }
         }
+
+        public UserModel GetUserById(int userId)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+                var output = connection.Query<UserModel>($"spUsers_GetUserById @UserId", new { UserId = userId }).ToList();
+                return output[0];
+            }
+        }
+
         #endregion
 
         #region Search Options
@@ -178,6 +199,14 @@ namespace HomemadeApp
                 }
                 
 
+            }
+        }
+
+        public void InsertRestriction(RestrictionsModel res)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("HomemadeDB")))
+            {
+               connection.Execute("spRestrictions_Insert @ResId, @UserId, @MaxNum, @MinNum", res);
             }
         }
         #endregion

@@ -87,7 +87,9 @@
     <Build Include="dbo\Procedures\spContain_Insert.sql" />
     <Build Include="dbo\Procedures\spMeals_GetMealsOfDay.sql" />
     <Build Include="dbo\Procedures\spRestrictions_GetFromUser.sql" />
-    <Build Include="spMeals_Insert.sql" />
+    <Build Include="dbo\Procedures\spMeals_Insert.sql" />
+    <Build Include="dbo\Procedures\spUsers_GetUserById.sql" />
+    <Build Include="spRestrictions_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LocalDemoDB.publish.xml" />

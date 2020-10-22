@@ -13,7 +13,7 @@ namespace HomemadeApp.ViewModels
         public event EventHandler<int> OnRecepieClick;
         public DayPlanListViewModel WeekPlanList { get; set; }
         public List<DayPlanListViewModel> DaysList { get; set; }
-        public List<RestrictionNameModel> Restrictions { get; set; }
+        public List<RestrictionsModel> Restrictions { get; set; }
         public PlannerViewModel()
         {
             DaysList = new List<DayPlanListViewModel>();
@@ -25,7 +25,7 @@ namespace HomemadeApp.ViewModels
                 DaysList.Add(dp);
             }
 
-            Restrictions = new List<RestrictionNameModel>();
+            Restrictions = new List<RestrictionsModel>();
             Restrictions.AddRange(DataAccess.Instance.GetRestrictionsByUserId(2));
         }
 
