@@ -13,6 +13,7 @@ namespace HomemadeApp.Models
         public int MaxNum { get; set; }
         public int MinNum { get; set; }
         public string ResName { get { return DataAccess.Instance.Restrictions[ResId]; } }
+        public int Num { get; set; }
 
         public RestrictionsModel() { }
         public RestrictionsModel(int resId, int userId, int maxNum, int minNum)

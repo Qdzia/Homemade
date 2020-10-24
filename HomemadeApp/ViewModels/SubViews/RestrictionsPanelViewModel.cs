@@ -30,6 +30,7 @@ namespace HomemadeApp.ViewModels
             var res = new RestrictionsModel(resId, 2, MaxNum, MinNum);
             DataAccess.Instance.InsertRestriction(res);
             Restrictions = DataAccess.Instance.GetRestrictionsByUserId(2);
+            NotifyOfPropertyChange(() => Restrictions);
         }
 
 

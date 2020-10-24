@@ -17,6 +17,7 @@ namespace HomemadeApp.ViewModels
         private GroceryListViewModel _groceryList;
         private DayPlannerViewModel _dayPlanner;
         private AccountViewModel _account;
+        private HomeViewModel _home;
 
         private Stack<Screen> _next;
         private Stack<Screen> _previous;
@@ -38,6 +39,7 @@ namespace HomemadeApp.ViewModels
             _groceryList = new GroceryListViewModel();
             _dayPlanner = new DayPlannerViewModel();
             _account = new AccountViewModel();
+            _home = new HomeViewModel();
 
             currentScreen = _planner;
             ActivateItem(currentScreen);

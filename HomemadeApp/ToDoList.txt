@@ -1,0 +1,19 @@
+﻿To Do:
+
+Deleting Items 
+-planner view recepies
+-restrictions from account view
+-during dayplan section delete recepie
+
+Fix
+-Display of nutrition recepieview
+
+Add
+-tag durring add recepie
+
+Jumpy
+-Planner to DayPlan and oposite
+-Serach to AddRecepie
+
+Home
+-Home jump events 

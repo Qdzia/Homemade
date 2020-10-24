@@ -1,10 +1,12 @@
 ﻿using Caliburn.Micro;
+using HomemadeApp.Logic;
 using HomemadeApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Automation.Peers;
 
 namespace HomemadeApp.ViewModels
 {
@@ -23,6 +25,7 @@ namespace HomemadeApp.ViewModels
             MealsOfDay.AddRange(DataAccess.Instance.GetMealsOfDay(date));
             DayName = date.DayOfWeek.ToString();
             DateFormat =  $"{date.Day}.{date.Month}.{date.Year}";
+            
         }
 
         public void RecepieClick(MealModel meal) 
@@ -33,6 +36,19 @@ namespace HomemadeApp.ViewModels
         {
             MealsOfDay = new BindableCollection<MealModel>();
             MealsOfDay.AddRange(DataAccess.Instance.GetMealsOfDay(_date));
+        }
+
+        public decimal CountNutrientsOfDay(int category)
+        {
+            NutrientsCounter counter = new NutrientsCounter();
+            decimal result = 0;
+
+            foreach (var meal in MealsOfDay)
+            {
+                result += counter.CountListNutrientsByCategory(DataAccess.Instance.GetRecepieIngById(meal.RecepieId), category);
+            }
+
+            return result;
         }
     }
 }

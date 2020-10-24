@@ -48,7 +48,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="15,0,15,10">
-                        <TextBlock FontSize="35" TextAlignment="Center" Text="{Binding MaxNum}"/>
+                        <TextBlock FontSize="35" TextAlignment="Center" Text="{Binding Num}"/>
                         
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock FontSize="9" TextAlignment="Center" Text="Max: "/>

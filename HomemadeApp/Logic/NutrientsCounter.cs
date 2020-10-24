@@ -28,6 +28,51 @@ namespace HomemadeApp.Logic
 
             return output;
         }
+        public decimal CountListNutrientsByCategory(List<IngListModel> ingList, int category)
+        {
+            if (category > 10) 
+            {
+                var amountIng = CountListNutrients(ingList);
+                switch (category)
+                {
+                    case 11:
+                        return amountIng.Calories;
+                    case 12:
+                        return amountIng.Fat;
+                    case 13:
+                        return amountIng.Carbs;
+                    case 14:
+                        return amountIng.Fiber;
+                    case 15:
+                        return amountIng.Sugar;
+                    case 16:
+                        return amountIng.Protein;
+                    case 17:
+                        return amountIng.Sodium;
+                    case 18:
+                        return amountIng.TransFat;
+                    case 19:
+                        return amountIng.Cholesterol;
+                }
+            } 
+
+
+            decimal output = 0;
+            var allIng = DataAccess.Instance.GetAllIng();
+
+            foreach (var ing in ingList)
+            {
+                foreach (var ingDB in allIng)
+                {
+                    if (ing.IngId == ingDB.IngId && ingDB.Category == category)
+                    {
+                        output += ing.Number;
+                    }
+                }
+            }
+
+            return output;
+        }
 
         public IngredientModel AddNutrients(IngredientModel baseIng, IngredientModel newIng, decimal multiplier)
         {

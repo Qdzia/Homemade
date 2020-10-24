@@ -27,6 +27,7 @@ namespace HomemadeApp.ViewModels
 
             Restrictions = new List<RestrictionsModel>();
             Restrictions.AddRange(DataAccess.Instance.GetRestrictionsByUserId(2));
+            CountRestrictions();
         }
 
         protected override void OnActivate()
@@ -39,6 +40,18 @@ namespace HomemadeApp.ViewModels
         public void RecepieClick(object sender, int recId)
         {
             OnRecepieClick?.Invoke(this, recId);
+        }
+
+        public void CountRestrictions()
+        {
+            foreach (var res in Restrictions)
+            {
+                foreach (var day in DaysList)
+                {
+                    res.Num += (int)day.CountNutrientsOfDay(res.ResId);
+                }
+            }
+        
         }
     }
 }

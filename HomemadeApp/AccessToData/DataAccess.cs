@@ -38,10 +38,11 @@ namespace HomemadeApp
             "Starchy Vegetables", "Other Vegetables", "Protein Foods",
             "Grains", "Fruits", "Dairy", "Oils", "Others" };
 
-        public string[] Restrictions { get; } = { "Dark-Green Vegetables",
-            "Red & Orange Vegetables", "Legumes(Beans & Peas)",
-            "Starchy Vegetables", "Other Vegetables", "Protein Foods",
-            "Grains", "Fruits", "Dairy", "Oils", "Others" };
+        public string[] Restrictions { get; } = { "Dark-Green Vegetables",//0
+            "Red & Orange Vegetables", "Legumes(Beans & Peas)",//1,2
+            "Starchy Vegetables", "Other Vegetables", "Protein Foods",//3,4,5
+            "Grains", "Fruits", "Dairy", "Oils", "Others","Calories",//6,7,8,9,10,11
+            "Fat","Carbs","Fiber","Sugar","Protein","Sodium","TransFat","Cholesterol" };//12,13,14,15,16,17,18,19
 
         #region Get Data 
         public List<RecepieModel> GetRecepieById(int recepieId)
