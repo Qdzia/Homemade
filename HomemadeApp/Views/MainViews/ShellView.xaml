@@ -32,7 +32,7 @@
                 <Image Margin="5" Source="{StaticResource MenuIcon}"/>
             </Button>
 
-            <Button x:Name="GotoHomePage" Style="{StaticResource MenuButtonStyle}">
+            <Button x:Name="GotoHome" Style="{StaticResource MenuButtonStyle}">
                 <Image Margin="5" Source="{StaticResource HomePageIcon}"/>
             </Button>
 
@@ -52,9 +52,6 @@
                 <Image Margin="5" Source="{StaticResource UserAccountIcon}"/>
             </Button>
 
-            <Button x:Name="GotoPerformance" Style="{StaticResource MenuButtonStyle}">
-                <Image Margin="5" Source="{StaticResource PerformanceIcon}"/>
-            </Button>
             
         </StackPanel>
 

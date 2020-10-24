@@ -21,6 +21,13 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <Button x:Name="AddNewRecepie"  HorizontalAlignment="Right" Style="{StaticResource MenuButtonStyle}">
+                <StackPanel >
+                    <TextBlock FontSize="15" TextAlignment="Left" VerticalAlignment="Center" Text="  Add Recepie  "/>
+                    <Image Margin="5" VerticalAlignment="Center" Source="{StaticResource AddRecepieIcon}" MaxHeight="20"/>
+                </StackPanel>
+            </Button>
+            
             <ContentControl x:Name="SearchBar" Grid.Column="1"/>
 
             <Grid Grid.Column="2">

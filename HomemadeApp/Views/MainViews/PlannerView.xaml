@@ -20,8 +20,15 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
+        
         <TextBlock Text="Planner Review" Style="{StaticResource HeaderTextBlockStyle}" Grid.ColumnSpan="2"/>
-
+        
+        <Button x:Name="PlanYourMeals" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource MenuButtonStyle}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <TextBlock FontSize="15" TextAlignment="Center" VerticalAlignment="Center" Text="  Plan Your Meals Here  "/>
+                <Image Margin="5" VerticalAlignment="Center" Source="{StaticResource AddRecepieIcon}" MaxHeight="20"/>
+            </StackPanel>
+        </Button>
         <ItemsControl Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Path=Items}" >
 
             <ItemsControl.ItemsPanel>

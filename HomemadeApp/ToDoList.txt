@@ -11,9 +11,6 @@ Fix
 Add
 -tag durring add recepie
 
-Jumpy
--Planner to DayPlan and oposite
--Serach to AddRecepie
 
 Home
 -Home jump events 

@@ -17,6 +17,8 @@ namespace HomemadeApp.ViewModels
     {
         public event EventHandler<int> OnRecepieClick;
 
+        public event EventHandler OnEditClick;
+
         public TagBarViewModel TagBar { get; set; }
         public SearchBarViewModel SearchBar { get; set; }
 
@@ -111,6 +113,11 @@ namespace HomemadeApp.ViewModels
         public void RecepieClick(object sender, int recId)
         {
             OnRecepieClick?.Invoke(this, recId);
+        }
+
+        public void AddNewRecepie()
+        {
+            OnEditClick?.Invoke(this, null);
         }
 
     }

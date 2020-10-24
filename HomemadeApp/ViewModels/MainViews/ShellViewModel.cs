@@ -45,8 +45,10 @@ namespace HomemadeApp.ViewModels
             ActivateItem(currentScreen);
 
             _freeSearch.OnRecepieClick += GoToRecepie;
+            _freeSearch.OnEditClick += GoToAddRecepie;
             _dayPlanner.OnRecepieClick += GoToRecepie;
             _planner.OnRecepieClick += GoToRecepie;
+            _planner.OnEditClick += GoToDayPlanner;
         }
 
         private void ChangeScreen(Screen view)
@@ -76,11 +78,10 @@ namespace HomemadeApp.ViewModels
         }
         public void GotoGroceryList() => ChangeScreen(_groceryList);
         public void GotoFreeSearch() => ChangeScreen(_freeSearch);
-        public void GotoPerformance() => ChangeScreen(_addRecepie);
-        //For testing purposes name is diffrent
         public void GotoUserAccount() => ChangeScreen(_account);
         public void GotoPlanner() => ChangeScreen(_planner);
-        public void GotoMenu() => ChangeScreen(_dayPlanner);
+        public void GotoMenu() => ChangeScreen(_home); 
+        public void GotoHome() => ChangeScreen(_home);
 
 
         public void GoToRecepie(object sender, int recId)
@@ -88,5 +89,13 @@ namespace HomemadeApp.ViewModels
             ChangeScreen(new RecepieViewModel(recId));
         }
 
+        public void GoToDayPlanner(object sender, EventArgs e)
+        {
+            ChangeScreen(_dayPlanner);
+        }
+        public void GoToAddRecepie(object sender, EventArgs e)
+        {
+            ChangeScreen(_addRecepie);
+        }
     }
 }

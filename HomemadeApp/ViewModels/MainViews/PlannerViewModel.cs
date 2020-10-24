@@ -11,6 +11,8 @@ namespace HomemadeApp.ViewModels
     class PlannerViewModel : Conductor<Screen>.Collection.AllActive
     {
         public event EventHandler<int> OnRecepieClick;
+
+        public event EventHandler OnEditClick;
         public DayPlanListViewModel WeekPlanList { get; set; }
         public List<DayPlanListViewModel> DaysList { get; set; }
         public List<RestrictionsModel> Restrictions { get; set; }
@@ -51,7 +53,11 @@ namespace HomemadeApp.ViewModels
                     res.Num += (int)day.CountNutrientsOfDay(res.ResId);
                 }
             }
-        
+        }
+
+        public void PlanYourMeals() 
+        {
+            OnEditClick?.Invoke(this, null);
         }
     }
 }
